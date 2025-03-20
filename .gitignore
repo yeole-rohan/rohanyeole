@@ -1,0 +1,6 @@
+venv/
+.env
+*.pyc
+__pycache__/
+static/  # If you're not committing static files
+media/   # If you're storing user-uploaded media files
