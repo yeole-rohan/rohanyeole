@@ -23,6 +23,9 @@
                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'html_editor' %}">HTML Editor</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
                     <li class="nav-item">
@@ -33,7 +36,7 @@
         </nav>
     </header>
 
-    <main class="container mt-3">
+    <main class="main-section">
         {% block content %}{% endblock %}
     </main>
 
