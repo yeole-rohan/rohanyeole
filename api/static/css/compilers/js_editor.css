@@ -1,0 +1,115 @@
+.editor-output-wrapper {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 120px);
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.editor-tabs {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.editor-tab {
+  background-color: #444;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.editor-tab.active {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-bottom: none;
+}
+
+.editor-tabs-right {
+  display: flex;
+  gap: 10px;
+}
+
+.editor-tabs-right button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.editor-tabs-right button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.editor-section {
+  display: none;
+  flex: 1;
+}
+
+.editor-section.active {
+  display: block;
+}
+
+.CodeMirror {
+  height: 100%;
+  font-size: 16px;
+}
+
+.output-section {
+  flex: 1;
+  border-left: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.output-title-bar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+#output-frame {
+  flex: 1;
+  border: none;
+}
+.CodeMirror-scroll{
+  margin-bottom: 0;
+  margin-right: 0;
+  padding-bottom: 0;
+}
+#console-output {
+  background-color: #f8f9fa;
+  border-top: 1px solid #ccc;
+  padding: 10px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+#console-output pre {
+  margin: 0;
+  font-family: monospace;
+  font-size: 14px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 899px) {
+  .editor-output-wrapper {
+      flex-direction: column;
+  }
+  .editor-main, .output-section{
+      width: 100%;
+  }
+  .resize-handle{
+      display: none;
+  }
+}
