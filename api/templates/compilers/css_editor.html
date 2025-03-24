@@ -7,6 +7,7 @@
 {% block head %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/material.min.css">
+<link rel="stylesheet" href="{% static 'css/compilers/compilers_aside.css' %}">
 <link rel="stylesheet" href="{% static 'css/compilers/html_cs_editor.css' %}">
 <script type="application/ld+json">
     {
@@ -36,6 +37,8 @@
 {% endblock %}
 
 {% block content %}
+<div class="compiler-wrapper">
+    {% include '../compilers/compiler_sidebar.html' %}
 <div class="editor-container mt-2">
     <div class="editor-output-wrapper">
         <div class="editor-main">
@@ -98,7 +101,7 @@ console.log("Hello from JavaScript!");
     </div>
     <div id="console-output"></div>
 </div>
-
+</div>
 {% endblock %}
 
 {% block scripts %}

@@ -102,9 +102,10 @@
   white-space: pre-wrap;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1024px) {
   .editor-output-wrapper {
       flex-direction: column;
+      flex:auto;
   }
   .editor-main, .output-section{
       width: 100%;

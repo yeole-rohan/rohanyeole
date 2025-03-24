@@ -1,0 +1,42 @@
+<!-- Aside bar -->
+ {% load static %}
+<aside>
+    <ul>
+        <li>
+          <a href="{% url 'html_editor' %}">
+              <img src="{% static 'img/compilers/html-logo.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+              title="HTML Compiler">
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'css_editor' %}">
+              <img src="{% static 'img/compilers/css-logo.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+              title="CSS Compiler">
+          </a>
+        </li>
+      <li>
+        <a href="{% url 'python_editor' %}">
+          <img src="{% static 'img/compilers/python-logo.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+          title="Python Compiler">
+        </a>
+      </li>
+      <li>
+        <a href="{% url 'js_editor' %}">
+            <img src="{% static 'img/compilers/js-logo.webp' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="JavaScript Compiler">
+        </a>
+      </li>
+      <!-- <li>
+        <a href="https://www.yourwebsite.com/java-compiler">
+            <img src="{% static 'img/compilers/java-logo.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="Java Compiler">
+        </a>
+      </li> -->
+      <!-- <li>
+        <a href="https://www.yourwebsite.com/cpp-compiler">
+            <img src="{% static 'img/compilers/cpp-logo.png' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="C++ Compiler">
+        </a>
+      </li> -->
+    </ul>
+  </aside>
