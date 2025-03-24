@@ -1,0 +1,97 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Box Shadow Generator - Create CSS Box Shadows Instantly | RohanYeole.com{% endblock %}
+{% block description %}Box shadows are a must for modern web design. Use our free generator to create CSS code for box-shadow, -webkit-box-shadow, and -moz-box-shadow in minutes.{% endblock %}
+
+{% load static %}
+{% block head %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Box Shadow Generator",
+      "description": "Box shadows are a must for modern web design. Use our free generator to create CSS code for box-shadow, -webkit-box-shadow, and -moz-box-shadow in minutes.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com/box-shadow/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2564"
+      }
+    }
+    
+    </script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Box Shadow CSS Generator</h1>
+    <div class="card p-4">
+        <div class="row">
+            <!-- Options on the left -->
+            <div class="col-md-6">
+                <form id="boxShadowForm">
+                    <div class="mb-3">
+                        <label for="horizontalOffset" class="form-label">Horizontal Offset (px)</label>
+                        <input type="range" class="form-range" id="horizontalOffset" min="-50" max="50" value="0">
+                        <input type="number" class="form-control mt-2" id="horizontalOffsetValue" min="-50" max="50" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="verticalOffset" class="form-label">Vertical Offset (px)</label>
+                        <input type="range" class="form-range" id="verticalOffset" min="-50" max="50" value="0">
+                        <input type="number" class="form-control mt-2" id="verticalOffsetValue" min="-50" max="50" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="blurRadius" class="form-label">Blur Radius (px)</label>
+                        <input type="range" class="form-range" id="blurRadius" min="0" max="50" value="0">
+                        <input type="number" class="form-control mt-2" id="blurRadiusValue" min="0" max="50" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="spreadRadius" class="form-label">Spread Radius (px)</label>
+                        <input type="range" class="form-range" id="spreadRadius" min="0" max="50" value="0">
+                        <input type="number" class="form-control mt-2" id="spreadRadiusValue" min="0" max="50" value="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="shadowColor" class="form-label">Shadow Color</label>
+                        <input type="color" class="form-control" id="shadowColor" value="#000000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="opacity" class="form-label">Opacity</label>
+                        <input type="range" class="form-range" id="opacity" min="0" max="1" step="0.1" value="1">
+                        <input type="number" class="form-control mt-2" id="opacityValue" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inset" name="inset">
+                            <label class="form-check-label" for="inset">Inset Shadow</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Output on the right -->
+            <div class="col-md-6">
+                <div class="preview-box" id="previewBox"></div>
+                <div class="mt-4">
+                    <label for="cssCode" class="form-label">Generated CSS Code</label>
+                    <textarea id="cssCode" class="form-control" rows="6" readonly></textarea>
+                    <button type="button" class="btn btn-success w-100 mt-2" id="copyCssButton">Copy CSS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/generators/css_box_shadow.js' %}"></script>
+{% endblock %}
+

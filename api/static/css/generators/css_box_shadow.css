@@ -1,0 +1,7 @@
+.preview-box {
+    width: 200px;
+    height: 200px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin: 20px auto;
+}

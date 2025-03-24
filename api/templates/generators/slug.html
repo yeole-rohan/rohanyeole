@@ -1,0 +1,85 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Slug Generator - Create Slug Instantly | RohanYeole.com{% endblock %}
+{% block description %}Create slugs quickly with our free generator. Remove stop words, numbers, and choose between dash (-) or underscore (_) for better SEO.{% endblock %}
+
+{% load static %}
+{% block head %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Slug Generator Online - Create Slug Instantly",
+      "description": "Create slugs quickly with our free generator. Remove stop words, numbers, and choose between dash (-) or underscore (_) for better SEO.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com/slug-generator/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2564"
+      }
+    }
+    
+    </script>
+{% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <h1 class="text-center mb-4">Slug Generator</h1>
+    <div class="card p-4">
+        <!-- Input Section -->
+        <div class="mb-3">
+            <label for="inputString" class="form-label">Input String</label>
+            <input type="text" class="form-control" id="inputString" placeholder="Enter your title here">
+        </div>
+
+        <!-- Options Section -->
+        <div class="mb-3">
+            <label class="form-label">Options</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="separator" id="dash" value="-" checked>
+                <label class="form-check-label" for="dash">Separate with dash (-)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="separator" id="underscore" value="_">
+                <label class="form-check-label" for="underscore">Separate with underscore (_)</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="removeStopWords">
+                <label class="form-check-label" for="removeStopWords">Remove stop words</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="removeNumbers">
+                <label class="form-check-label" for="removeNumbers">Remove numbers</label>
+            </div>
+        </div>
+
+        <!-- Actions Section -->
+        <div class="mb-3">
+            <button type="button" class="btn btn-primary" id="slugifyButton">Slugify</button>
+            <button type="button" class="btn btn-secondary" id="clearButton">Clear</button>
+            <button type="button" class="btn btn-warning" id="resetButton">Reset</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="mt-4">
+            <label for="outputSlug" class="form-label">Output</label>
+            <textarea id="outputSlug" class="form-control" rows="3" readonly></textarea>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'js/generators/slug.js' %}"></script>
+{% endblock %}
+

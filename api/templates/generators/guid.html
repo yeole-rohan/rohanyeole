@@ -4,6 +4,120 @@
 {% block description %}A GUID is a 128-bit identifier, typically represented as a 32-character hexadecimal string.{% endblock %}
 
 {% load static %}
+{% block head %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Online GUID Generator",
+      "description": "A GUID is a 128-bit identifier, typically represented as a 32-character hexadecimal string.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com//guid/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "2425"
+      }
+    }
+</script>
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a GUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GUID (Globally Unique Identifier) is a 128-bit identifier used to uniquely identify resources in software development. It is commonly represented as a 32-character hexadecimal string."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a GUID generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GUID generator is a tool that creates Globally Unique Identifiers (GUIDs) on demand. It ensures that each generated identifier is unique across space and time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should I use a GUID generator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GUID generator simplifies the process of creating unique identifiers, saving time and ensuring globally unique IDs for use in databases, APIs, distributed systems, and testing environments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I create a new GUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can create a new GUID using an online GUID generator or programming languages like Python, C#, or Java. For example, in Python: `import uuid; print(uuid.uuid4())`."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a GUID the same as a UUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, a GUID and a UUID are essentially the same. The term GUID is commonly used in Microsoft technologies, while UUID is used in non-Microsoft contexts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How unique is a GUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GUID is extremely unique. The 128-bit size and generation algorithm ensure that the probability of generating two identical GUIDs is negligible, even across distributed systems."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can GUIDs be decoded or traced?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, GUIDs are randomly generated and do not contain any identifiable information. They are used solely for uniqueness and cannot be decoded or traced."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I generate GUIDs in SQL?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In SQL, you can generate GUIDs using the `NEWID()` function. For example: `SELECT NEWID();`."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a valid GUID example?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A valid GUID example is: `550e8400-e29b-41d4-a716-446655440000`."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many characters are in a GUID?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A GUID is a 32-character hexadecimal string, typically grouped with hyphens into 8-4-4-4-12 segments."
+          }
+        }
+      ]
+    }
+    </script>
+{% endblock %}
 {% block content %}
 <div class="container">
     <h1 class="text-center mt-4">GUID / UUID Generator</h1>

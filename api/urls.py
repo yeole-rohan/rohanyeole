@@ -8,4 +8,6 @@ urlpatterns = [
     path('space-flight/', views.SpaceShipView.as_view(), name='space_ship'),
     path('online-python-compiler/', views.PythonEditorView.as_view(), name='python_editor'),
     path('guid/', views.generate_guid, name='generate_guid'),
+    path('box-shadow/', views.CSSBoxView.as_view(), name='css_box_shadow'),
+    path('slug-generator/',views.SlugView.as_view(), name='slug'),
 ]
