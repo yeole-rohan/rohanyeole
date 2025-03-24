@@ -7,4 +7,5 @@ urlpatterns = [
     path('js-online-editor/', views.JSEditorView.as_view(), name='js_editor'),
     path('space-flight/', views.SpaceShipView.as_view(), name='space_ship'),
     path('online-python-compiler/', views.PythonEditorView.as_view(), name='python_editor'),
+    path('guid/', views.generate_guid, name='generate_guid'),
 ]

@@ -1,0 +1,283 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Online GUID Generator | RohanYeole.com{% endblock %}
+{% block description %}A GUID is a 128-bit identifier, typically represented as a 32-character hexadecimal string.{% endblock %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-4">GUID / UUID Generator</h1>
+    <div class="card p-4">
+        <form id="guidForm" class="mb-4">
+            <!-- Number of GUIDs input -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <label for="numGuids" class="form-label">How many GUIDs do you want (1-1000)?</label>
+                    <input type="number" class="form-control" id="numGuids" name="num_guids" min="1" max="1000" value="1" required>
+                </div>
+            </div>
+
+            <!-- Format Options -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <strong>Format:</strong>
+                </div>
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="hyphens" name="hyphens" checked>
+                        <label class="form-check-label" for="hyphens">Hyphens</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="braces" name="braces">
+                        <label class="form-check-label" for="braces">Braces</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="uppercase" name="uppercase">
+                        <label class="form-check-label" for="uppercase">Uppercase</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="quotes" name="quotes">
+                        <label class="form-check-label" for="quotes">Quotes</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Encoding Options -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <strong>Encoding:</strong>
+                </div>
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="base64" name="base64">
+                        <label class="form-check-label" for="base64">Base 64</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="rfc7515" name="rfc7515">
+                        <label class="form-check-label" for="rfc7515">RFC 7515</label>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="url_encode" name="url_encode">
+                        <label class="form-check-label" for="url_encode">URL Encode</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="commas" name="commas">
+                        <label class="form-check-label" for="commas">Commas</label>
+                    </div>
+                </div>
+            </div>
+            {% csrf_token %}
+            <div class="row mb-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary w-100">Generate GUIDs</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- Copy and Clear Buttons -->
+        <div class="row mb-3">
+            <div class="col-6">
+                <button id="copyButton" class="btn btn-success w-100" disabled>Copy GUIDs</button>
+            </div>
+            <div class="col-6">
+                <button id="clearButton" class="btn btn-danger w-100" disabled>Clear GUIDs</button>
+            </div>
+        </div>
+
+        <!-- GUID Output Textarea -->
+        <div class="row">
+            <div class="col-12">
+                <textarea id="guidOutput" class="form-control mt-3" rows="10" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="card p-4 mt-2">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion mt-2" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                        What is a GUID generator?
+                    </button>
+                </h3>
+                <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A <b>GUID generator</b> is a tool that creates <b>Globally Unique Identifiers</b> (GUIDs) on demand. It ensures that each generated identifier is unique across space and time.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading2">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                        How do I create a new GUID?
+                    </button>
+                </h3>
+                <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can create a new GUID using an <b>online GUID generator</b> or programming languages like Python, C#, or Java. For example, in Python:
+<code>
+python
+import uuid
+print(uuid.uuid4())
+</code>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading3">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                        What is the GUID used for?
+                    </button>
+                </h3>
+                <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        GUIDs are used to <b>uniquely identify resources</b> in databases, APIs, distributed systems, and testing environments.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading4">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        गाईड जनरेटर म्हणजे काय?
+                    </button>
+                </h3>
+                <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        <b>गाईड जनरेटर</b> म्हणजे एक साधन जे <b>जागतिक स्तरावर अद्वितीय ओळखकर्ते</b> (GUIDs) तयार करते. हे सुनिश्चित करते की प्रत्येक ओळखकर्ता अद्वितीय आहे.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 5 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading5">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        How big is a GUID?
+                    </button>
+                </h3>
+                <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A GUID is a <b>128-bit</b> identifier, typically represented as a 32-character hexadecimal string.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 6 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading6">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        How do I find my GUID?
+                    </button>
+                </h3>
+                <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        You can find your GUID in <b>databases</b>, <b>APIs</b>, or using <b>programming languages</b> like Python or C#.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 7 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading7">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        How to find a user GUID?
+                    </button>
+                </h3>
+                <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A user GUID can be found in <b>user databases</b> or <b>authentication systems</b>. Use SQL queries or API calls to retrieve it.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 8 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading8">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        How to generate GUID ID in SQL?
+                    </button>
+                </h3>
+                <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        In SQL, use the `NEWID()` function to generate a GUID:
+<code>sql
+    SELECT NEWID();
+</code>
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 9 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading9">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        Is GUID the same as ID?
+                    </button>
+                </h3>
+                <div id="collapse9" class="accordion-collapse collapse" aria-labelledby="heading9" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Yes, a GUID is a type of <b>unique identifier</b>. However, it is guaranteed to be globally unique, unlike a regular ID.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 10 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading10">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        What is a valid GUID example?
+                    </button>
+                </h3>
+                <div id="collapse10" class="accordion-collapse collapse" aria-labelledby="heading10" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A valid GUID example is: `550e8400-e29b-41d4-a716-446655440000`.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 11 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading11">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                        How to find app GUID?
+                    </button>
+                </h3>
+                <div id="collapse11" class="accordion-collapse collapse" aria-labelledby="heading11" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        An app GUID can be found in the app’s <b>configuration files</b> or using <b>registry entries</b> on Windows.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ Item 12 -->
+            <div class="accordion-item">
+                <h3 class="accordion-header" id="heading12">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                        How many digits is a GUID?
+                    </button>
+                </h3>
+                <div id="collapse12" class="accordion-collapse collapse" aria-labelledby="heading12" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        A GUID is a <b>32-character</b> hexadecimal string, typically grouped with hyphens into 8-4-4-4-12 segments.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h2>More Information About GUIDs</h2>
+    <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Globally_unique_identifier" target="_blank">Globally Unique Identifier - Wikipedia</a></li>
+        <li><a href="https://learn.microsoft.com/en-us/dotnet/api/system.guid?view=net-7.0" target="_blank">GUID Structure - Microsoft.com</a></li>
+        <li><a href="https://tools.ietf.org/html/rfc4122" target="_blank">RFC 4122 - IETF</a></li>
+    </ul>
+</div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'js/generators/guid.js' %}"></script>
+{% endblock %}
+
