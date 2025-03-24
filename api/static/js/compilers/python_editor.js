@@ -37,7 +37,8 @@ $(document).ready(function () {
         const code = editor.getValue();
         const outputDiv = document.getElementById('console-output');
         // Clear previous output
-        outputDiv.value += '\nExecuting...\n';
+        outputDiv.value = ''
+        outputDiv.value = '\nExecuting...\n';
 
         try {
             // Run Python code using Pyodide
