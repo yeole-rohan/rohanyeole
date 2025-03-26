@@ -41,6 +41,7 @@ def url_parser(request):
         if url:
             try:
                 context['components'] = parse_url(url)
+                context['inputUrl'] = url
             except ValueError as e:
                 context['error'] = str(e)
         else:

@@ -17,7 +17,7 @@
             {% csrf_token %}
             <div class="mb-3">
                 <label for="inputUrl" class="form-label">Enter a URL</label>
-                <input type="text" name="url" id="inputUrl" class="form-control" placeholder="https://example.com/path?key=value" required>
+                <input type="text" {% if inputUrl %} value="{{inputUrl}}" {% endif %} name="url" id="inputUrl" class="form-control" placeholder="https://example.com/path?key=value" required>
             </div>
 
             <!-- Parse Button -->

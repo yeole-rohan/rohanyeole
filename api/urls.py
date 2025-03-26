@@ -20,4 +20,5 @@ urlpatterns = [
     path('yml-minify-buetify/',views.FormatMinifyYMLView.as_view(), name='yml_format_minify'),
     path('csharp-minify-buetify/',views.FormatMinifyCSharpView.as_view(), name='csharp_format_minify'),
     path('parse-url/', views.url_parser, name='parse_url'),
+    path('format-json/', views.json_formatter, name='format_json'),
 ]
