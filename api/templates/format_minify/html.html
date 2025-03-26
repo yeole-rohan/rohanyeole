@@ -1,0 +1,85 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Run Python Online compiler - Free Online Python Compiler & Editor | RohanYeole.com{% endblock %}
+{% block description %}Python compiler lets you write, run, and debug Python code. Perfect for students, developers, and coding enthusiasts. Start coding in Python now!{% endblock %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/format_minify/format_minify.css' %}">
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Online Python Compiler",
+      "description": "Free online Python compiler to write, run, and debug Python code. Perfect for students, developers, and coding enthusiasts. Start coding in Python now!",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com/online-python-compiler/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2564"
+      }
+    }
+    
+    </script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">HTML Formatter</h1>
+    <div class="card p-4">
+        <!-- Upload HTML File -->
+        <div class="mb-3">
+            <label for="uploadHtml" class="form-label">Upload HTML File</label>
+            <input type="file" class="form-control" id="uploadHtml" accept=".html">
+        </div>
+
+        <!-- Input Section -->
+        <div class="mb-3">
+            <label for="inputHtml" class="form-label">Or Enter Your HTML Code</label>
+            <textarea id="inputHtml" class="form-control" rows="10" placeholder="Paste your HTML code here"></textarea>
+        </div>
+
+        <!-- Custom Tabs -->
+        <div class="mb-3">
+            <label for="tabSize" class="form-label">Indentation Size (Spaces)</label>
+            <select class="form-select" id="tabSize">
+                <option value="2">2 Spaces</option>
+                <option value="4">4 Spaces</option>
+                <option value="8">8 Spaces</option>
+            </select>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mb-3">
+            <button class="btn btn-primary" id="beautify">Beautify</button>
+            <button class="btn btn-secondary" id="minify">Minify</button>
+            <button class="btn btn-warning" id="clear">Clear</button>
+        </div>
+        <!-- Download & Copy -->
+        <div class="mt-4">
+            <button class="btn btn-success" id="copyHtml">Copy to Clipboard</button>
+            <button class="btn btn-info" id="downloadHtml">Download</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="mt-4">
+            <label for="outputHtml" class="form-label">Formatted HTML</label>
+            <pre id="outputHtml" class="form-control output" readonly></pre>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/format_minify/html.js' %}"></script>
+{% endblock %}

@@ -10,4 +10,13 @@ urlpatterns = [
     path('guid/', views.generate_guid, name='generate_guid'),
     path('box-shadow/', views.CSSBoxView.as_view(), name='css_box_shadow'),
     path('slug-generator/',views.SlugView.as_view(), name='slug'),
+    path('css-minify-buetify/',views.FormatMinifyCSSView.as_view(), name='css_format_minify'),
+    path('html-minify-buetify/',views.FormatMinifyHTMLView.as_view(), name='css_format_minify'),
+    path('json-minify-buetify/',views.FormatMinifyJSONView.as_view(), name='json_format_minify'),
+    path('markdown-minify-buetify/',views.FormatMinifyMakrDownView.as_view(), name='markdown_format_minify'),
+    path('sql-minify-buetify/',views.FormatMinifySQLView.as_view(), name='sql_format_minify'),
+    path('xml-minify-buetify/',views.FormatMinifyXMLView.as_view(), name='xml_format_minify'),
+    path('js-minify-buetify/',views.FormatMinifyJSView.as_view(), name='js_format_minify'),
+    path('yml-minify-buetify/',views.FormatMinifyYMLView.as_view(), name='yml_format_minify'),
+    path('csharp-minify-buetify/',views.FormatMinifyCSharpView.as_view(), name='csharp_format_minify'),
 ]

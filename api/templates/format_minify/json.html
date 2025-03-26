@@ -1,0 +1,70 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Run Python Online compiler - Free Online Python Compiler & Editor | RohanYeole.com{% endblock %}
+{% block description %}Python compiler lets you write, run, and debug Python code. Perfect for students, developers, and coding enthusiasts. Start coding in Python now!{% endblock %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/format_minify/format_minify.css' %}">
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Online Python Compiler",
+      "description": "Free online Python compiler to write, run, and debug Python code. Perfect for students, developers, and coding enthusiasts. Start coding in Python now!",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com/online-python-compiler/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2564"
+      }
+    }
+    
+    </script>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">JSON Formatter</h1>
+    <div class="card p-4">
+        <!-- Input Section -->
+        <div class="mb-3">
+            <label for="inputJson" class="form-label">Enter Your JSON</label>
+            <textarea id="inputJson" class="form-control" rows="10" placeholder="Paste your JSON here"></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="mb-3">
+            <button class="btn btn-primary" id="beautify">Beautify</button>
+            <button class="btn btn-secondary" id="minify">Minify</button>
+            <button class="btn btn-warning" id="clear">Clear</button>
+        </div>
+        <!-- Download & Copy -->
+        <div class="mt-4">
+            <button class="btn btn-success" id="copyJson">Copy to Clipboard</button>
+            <button class="btn btn-info" id="downloadJson">Download</button>
+        </div>
+
+        <!-- Output Section -->
+        <div class="mt-4">
+            <label for="outputJson" class="form-label">Formatted JSON</label>
+            <pre id="outputJson" class="form-control output" readonly></pre>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/format_minify/json.js' %}"></script>
+{% endblock %}
