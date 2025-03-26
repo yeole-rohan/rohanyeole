@@ -34,13 +34,13 @@
 {% endblock %}
 {% block content %}
 <div class="container">
-    <h1 class="text-center mb-4">Markdown Formatter</h1>
+    <h1 class="text-center mb-4">JS Formatter</h1>
 
     <div class="card p-4">
         <!-- Input Section -->
         <div class="mb-3">
-            <label for="inputMarkdown" class="form-label">Enter Your Markdown</label>
-            <textarea id="inputMarkdown" class="form-control" rows="10" placeholder="Paste your Markdown here"></textarea>
+            <label for="inputJs" class="form-label">Enter Your Js</label>
+            <textarea id="inputJs" class="form-control" rows="10" placeholder="Paste your Js here"></textarea>
         </div>
 
         <!-- Buttons -->
@@ -52,14 +52,14 @@
 
         <!-- Download & Copy -->
         <div class="mt-4">
-            <button class="btn btn-success" id="copyMarkdown">Copy to Clipboard</button>
-            <button class="btn btn-info" id="downloadMarkdown">Download</button>
+            <button class="btn btn-success" id="copyJs">Copy to Clipboard</button>
+            <button class="btn btn-info" id="downloadJs">Download</button>
         </div>
 
         <!-- Output Section -->
         <div class="mt-4">
-            <label for="outputMarkdown" class="form-label">Formatted Markdown</label>
-            <pre id="outputMarkdown" class="form-control output" readonly></pre>
+            <label for="outputJs" class="form-label">Formatted Js</label>
+            <pre id="outputJs" class="form-control output" readonly></pre>
         </div>
     </div>
 </div>

@@ -1,36 +1,36 @@
 var $ = jQuery.noConflict();
 $(document).ready(function () {
-    const inputMarkdown = document.getElementById('inputMarkdown');
-    const outputMarkdown = document.getElementById('outputMarkdown');
+    const inputJs = document.getElementById('inputJs');
+    const outputJs = document.getElementById('outputJs');
     const beautifyButton = document.getElementById('beautify');
     const minifyButton = document.getElementById('minify');
     const clearButton = document.getElementById('clear');
-    const copyButton = document.getElementById('copyMarkdown');
-    const downloadButton = document.getElementById('downloadMarkdown');
+    const copyButton = document.getElementById('copyJs');
+    const downloadButton = document.getElementById('downloadJs');
 
     // Beautify Markdown
     beautifyButton.addEventListener('click', () => {
-        const markdown = inputMarkdown.value;
+        const markdown = inputJs.value;
         const beautified = formatMarkdown(markdown);
-        outputMarkdown.textContent = beautified;
+        outputJs.textContent = beautified;
     });
 
     // Minify Markdown
     minifyButton.addEventListener('click', () => {
-        const markdown = inputMarkdown.value;
+        const markdown = inputJs.value;
         const minified = minifyMarkdown(markdown);
-        outputMarkdown.textContent = minified;
+        outputJs.textContent = minified;
     });
 
     // Clear Input and Output
     clearButton.addEventListener('click', () => {
-        inputMarkdown.value = '';
-        outputMarkdown.textContent = '';
+        inputJs.value = '';
+        outputJs.textContent = '';
     });
 
     // Copy to Clipboard
     copyButton.addEventListener('click', () => {
-        const formattedMarkdown = outputMarkdown.textContent;
+        const formattedMarkdown = outputJs.textContent;
         if (formattedMarkdown) {
             navigator.clipboard.writeText(formattedMarkdown)
                 .then(() => alert('Markdown copied to clipboard!'))
@@ -42,7 +42,7 @@ $(document).ready(function () {
 
     // Download Markdown
     downloadButton.addEventListener('click', () => {
-        const formattedMarkdown = outputMarkdown.textContent;
+        const formattedMarkdown = outputJs.textContent;
         if (formattedMarkdown) {
             const blob = new Blob([formattedMarkdown], { type: 'text/markdown' });
             const url = URL.createObjectURL(blob);
