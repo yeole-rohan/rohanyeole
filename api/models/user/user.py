@@ -1,8 +1,9 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from api.models import UserManager
+from api.models.mixins import GlobalIdMixin
 
-class User(AbstractUser):
+class User(GlobalIdMixin, AbstractUser):
     email = models.EmailField(unique=True)
 
     USERNAME_FIELD = 'email'
