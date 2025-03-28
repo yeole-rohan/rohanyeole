@@ -39,6 +39,64 @@
                 <li class="list-group-item">Line Count: <span id="lineCount">0</span></li>
             </ul>
         </div>
+
+        <h2 class="text-center mb-4 mt-5">Word Shuffle - Frequently Asked Questions</h2>
+        
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="list-group">
+                    
+                    <!-- Question 1 -->
+                    <div class="list-group-item">
+                        <h5>What is Word Shuffle?</h5>
+                        <p>Word shuffle is the process of randomly rearranging the order of words in a given text. It is often used for word games, content mixing, or educational exercises.</p>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="list-group-item">
+                        <h5>How does a word shuffler work?</h5>
+                        <p>A word shuffler takes input text, splits it into individual words, randomly shuffles their order, and outputs the new arrangement.</p>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="list-group-item">
+                        <h5>Can I shuffle words in a sentence while keeping sentence structure?</h5>
+                        <p>Yes, some advanced tools allow shuffling within individual sentences while maintaining punctuation and structure.</p>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="list-group-item">
+                        <h5>Is there a way to shuffle letters within each word?</h5>
+                        <p>Yes, you can modify a word shuffler to shuffle letters instead of words, though it may affect readability.</p>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="list-group-item">
+                        <h5>Does shuffling words affect the meaning of a sentence?</h5>
+                        <p>Yes, shuffling words changes the sentence's structure, often making it lose its original meaning unless rules are applied to maintain grammar.</p>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="list-group-item">
+                        <h5>Where can I use a word shuffler?</h5>
+                        <p>Word shufflers are used in educational games, writing exercises, SEO content mixing, and software development.</p>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="list-group-item">
+                        <h5>Can I shuffle multiple paragraphs at once?</h5>
+                        <p>Yes, a word shuffler can handle large blocks of text and shuffle words across multiple paragraphs.</p>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="list-group-item">
+                        <h5>Is there an online tool for word shuffling?</h5>
+                        <p>Yes, you can try our <a href="/shuffle/" class="text-decoration-none">Word Shuffle Tool</a> for free!</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
@@ -96,7 +154,79 @@
           ]
         }
     </script>
-
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is Word Shuffle?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Word shuffle is the process of randomly rearranging the order of words in a given text. It is often used for word games, content mixing, or educational exercises."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does a word shuffler work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A word shuffler takes input text, splits it into individual words, randomly shuffles their order, and outputs the new arrangement."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I shuffle words in a sentence while keeping sentence structure?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, some advanced tools allow shuffling within individual sentences while maintaining punctuation and structure."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a way to shuffle letters within each word?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can modify a word shuffler to shuffle letters instead of words, though it may affect readability."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does shuffling words affect the meaning of a sentence?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, shuffling words changes the sentence's structure, often making it lose its original meaning unless rules are applied to maintain grammar."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Where can I use a word shuffler?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Word shufflers are used in educational games, writing exercises, SEO content mixing, and software development."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I shuffle multiple paragraphs at once?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, a word shuffler can handle large blocks of text and shuffle words across multiple paragraphs."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there an online tool for word shuffling?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, you can try our <a href='/shuffle/'>Word Shuffle Tool</a> for free!"
+              }
+            }
+          ]
+        }
+    </script>
+        
     <script src="{% static 'js/others/word_shuffle.js' %}"></script>
 
 {% endblock %}
