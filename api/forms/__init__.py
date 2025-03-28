@@ -1,1 +1,2 @@
-from .email_validator_form import EmailValidationForm
+from .email_validator import EmailValidationForm
+from .sha_512_hash import HashForm

@@ -21,6 +21,8 @@ urlpatterns = [
     path('csharp-minify-buetify/',views.FormatMinifyCSharpView.as_view(), name='csharp_format_minify'),
     path('parse-url/', views.url_parser, name='parse_url'),
 
+    # All Generators URLS
+    path('sha512-hash-generator/', views.SHA512HashGenerator.as_view(), name='sha512_generator'),
     # All Validators URLS
     path('email-validator/', views.email_validator_view, name='email_validator'),
 

@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from api.forms import EmailValidationForm
-from api.models import ValidEmail
 from api.service import EmailService
 
 def email_validator_view(request):

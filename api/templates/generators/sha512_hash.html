@@ -1,0 +1,189 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Box Shadow - Create CSS Box Shadows Instantly | RohanYeole.com{% endblock %}
+{% block description %}Box shadows are a must for modern web design. Use our free generator to create CSS code for box-shadow, -webkit-box-shadow, and -moz-box-shadow in minutes.{% endblock %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'css/generators/css_box_shadow.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+        <h1 class="text-center mb-4">SHA-512 Hash Generator</h1>
+
+        <form method="post" id="hash-form">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="text" class="form-label">Enter Text:</label>
+                <textarea id="text-input" name="text" class="form-control" rows="3" required>{{ request.POST.text }}</textarea>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">SHA-512 Hash:</label>
+                <textarea id="hash-output" class="form-control" rows="4" readonly>{{ sha512_hash }}</textarea>
+            </div>
+
+            <div class="d-flex" style="gap:20px">
+                <button type="button" id="copy-btn" class="btn btn-secondary">Copy</button>
+                <button type="button" id="clear-btn" class="btn btn-danger">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Box Shadow",
+      "description": "Box shadows are a must for modern web design. Use our free generator to create CSS code for box-shadow, -webkit-box-shadow, and -moz-box-shadow in minutes.",
+      "applicationCategory": "Developer Tools",
+      "operatingSystem": "Web",
+      "featureList": "Real-time execution, error highlighting, debugging",
+      "url": "https://rohanyeole.com/box-shadow/",
+      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "2564"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://rohanyeole.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Email Validator",
+              "item": "https://rohanyeole.com/box-shadow/"
+            },
+          ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A box shadow is a CSS effect that adds a shadow to an element, creating a depth effect. It is commonly used for styling UI components."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is an example of a shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A common example of a shadow is the shadow cast by an object under sunlight or a CSS box-shadow like box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is drop-shadow an example of?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Drop shadow is an example of a filter effect that adds a shadow to an element but retains transparency, commonly used in images and SVG elements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to customize box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can customize a box shadow by adjusting its horizontal offset, vertical offset, blur radius, spread radius, and color."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to decorate a shadow box?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A shadow box can be decorated using various materials like LED lights, stickers, or layered paper cutouts to enhance its appearance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to read box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A box-shadow property consists of multiple values like horizontal-offset vertical-offset blur-radius spread-radius color, for example: box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you do shadow writing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shadow writing can be done using text-shadow in CSS, such as text-shadow: 2px 2px 5px rgba(0,0,0,0.5)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to layer a shadow box?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Layering a shadow box involves stacking elements at different depths to create a 3D effect."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between text shadow and box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Text-shadow applies shadow effects to text, while box-shadow applies shadows to entire elements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the types of shadows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Types of shadows include cast shadow, form shadow, core shadow, and CSS-based box-shadow and text-shadow."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between box shadow and drop shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Box-shadow applies to the entire element, while drop-shadow works on the visible part, including transparency."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is shadow texting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shadow texting refers to adding a shadow effect to text using CSS or a visual design technique."
+              }
+            }
+          ]
+        }
+    </script>        
+    <script src="{% static 'js/generators/sha512_hash.js' %}"></script>
+{% endblock %}
+
