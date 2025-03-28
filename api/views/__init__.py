@@ -5,3 +5,4 @@ from .generators import *
 from .formatter_minify import *
 from .parser import *
 from .validators import *
+from .others import *

@@ -23,4 +23,7 @@ urlpatterns = [
 
     # All Validators URLS
     path('email-validator/', views.email_validator_view, name='email_validator'),
+
+    # Other Tools URLS
+    path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
 ]
