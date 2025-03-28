@@ -5,7 +5,135 @@
 
 {% load static %}
 {% block head %}
-<script type="application/ld+json">
+    <link rel="stylesheet" href="{% static 'css/generators/css_box_shadow.css' %}">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mb-4">Box Shadow CSS Generator</h1>
+    <div class="card p-4">
+        <div class="row">
+            <!-- Options on the left -->
+            <div class="col-md-6">
+                <form id="boxShadowForm">
+                    <div class="mb-3">
+                        <label for="horizontalOffset" class="form-label">Horizontal Offset (px)</label>
+                        <input type="range" class="form-range" id="horizontalOffset" min="-50" max="50" value="0">
+                        <input type="number" class="form-control mt-2" id="horizontalOffsetValue" min="-50" max="50" value="10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="verticalOffset" class="form-label">Vertical Offset (px)</label>
+                        <input type="range" class="form-range" id="verticalOffset" min="-50" max="50" value="10">
+                        <input type="number" class="form-control mt-2" id="verticalOffsetValue" min="-50" max="50" value="10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="blurRadius" class="form-label">Blur Radius (px)</label>
+                        <input type="range" class="form-range" id="blurRadius" min="0" max="50" value="20">
+                        <input type="number" class="form-control mt-2" id="blurRadiusValue" min="0" max="50" value="20">
+                    </div>
+                    <div class="mb-3">
+                        <label for="spreadRadius" class="form-label">Spread Radius (px)</label>
+                        <input type="range" class="form-range" id="spreadRadius" min="0" max="50" value="10">
+                        <input type="number" class="form-control mt-2" id="spreadRadiusValue" min="0" max="50" value="10">
+                    </div>
+                    <div class="mb-3">
+                        <label for="shadowColor" class="form-label">Shadow Color</label>
+                        <input type="color" class="form-control" id="shadowColor" value="#000000">
+                    </div>
+                    <div class="mb-3">
+                        <label for="opacity" class="form-label">Opacity</label>
+                        <input type="range" class="form-range" id="opacity" min="0" max="1" step="0.1" value="1">
+                        <input type="number" class="form-control mt-2" id="opacityValue" min="0" max="1" step="0.1" value="1">
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inset" name="inset">
+                            <label class="form-check-label" for="inset">Inset Shadow</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Output on the right -->
+            <div class="col-md-6">
+                <label class="form-label">Preview box</label>
+                <div class="preview-box" id="previewBox"></div>
+                <div class="mt-4">
+                    <label for="cssCode" class="form-label">Generated CSS Code</label>
+                    <textarea id="cssCode" class="form-control" rows="6" readonly></textarea>
+                    <button type="button" class="btn btn-success w-100 mt-2" id="copyCssButton">Copy CSS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h2 class="mb-4 text-center">Box Shadow FAQ</h2>
+        
+        <div class="mb-4">
+            <h4>What is a box shadow?</h4>
+            <p>A box shadow is a CSS effect that adds a shadow to an element, creating a depth effect. It is commonly used for styling UI components.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What is an example of a shadow?</h4>
+            <p>A common example of a shadow is the shadow cast by an object under sunlight or a CSS box-shadow like <code>box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);</code>.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What is drop-shadow an example of?</h4>
+            <p>Drop shadow is an example of a filter effect that adds a shadow to an element but retains transparency, commonly used in images and SVG elements.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>How to customize box shadow?</h4>
+            <p>You can customize a box shadow by adjusting its horizontal offset, vertical offset, blur radius, spread radius, and color.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>How to decorate a shadow box?</h4>
+            <p>A shadow box can be decorated using various materials like LED lights, stickers, or layered paper cutouts to enhance its appearance.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>How to read box shadow?</h4>
+            <p>A box-shadow property consists of multiple values like <code>horizontal-offset vertical-offset blur-radius spread-radius color</code>, for example: <code>box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);</code>.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>How do you do shadow writing?</h4>
+            <p>Shadow writing can be done using text-shadow in CSS, such as <code>text-shadow: 2px 2px 5px rgba(0,0,0,0.5);</code>.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>How to layer a shadow box?</h4>
+            <p>Layering a shadow box involves stacking elements at different depths to create a 3D effect.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What is the difference between text shadow and box shadow?</h4>
+            <p>Text-shadow applies shadow effects to text, while box-shadow applies shadows to entire elements.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What are the types of shadows?</h4>
+            <p>Types of shadows include cast shadow, form shadow, core shadow, and CSS-based box-shadow and text-shadow.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What is the difference between box shadow and drop shadow?</h4>
+            <p>Box-shadow applies to the entire element, while drop-shadow works on the visible part, including transparency.</p>
+        </div>
+    
+        <div class="mb-4">
+            <h4>What is shadow texting?</h4>
+            <p>Shadow texting refers to adding a shadow effect to text using CSS or a visual design technique.</p>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
@@ -28,70 +156,131 @@
         "reviewCount": "2564"
       }
     }
-    
     </script>
-{% endblock %}
-{% block content %}
-<div class="container">
-    <h1 class="text-center mb-4">Box Shadow CSS Generator</h1>
-    <div class="card p-4">
-        <div class="row">
-            <!-- Options on the left -->
-            <div class="col-md-6">
-                <form id="boxShadowForm">
-                    <div class="mb-3">
-                        <label for="horizontalOffset" class="form-label">Horizontal Offset (px)</label>
-                        <input type="range" class="form-range" id="horizontalOffset" min="-50" max="50" value="0">
-                        <input type="number" class="form-control mt-2" id="horizontalOffsetValue" min="-50" max="50" value="0">
-                    </div>
-                    <div class="mb-3">
-                        <label for="verticalOffset" class="form-label">Vertical Offset (px)</label>
-                        <input type="range" class="form-range" id="verticalOffset" min="-50" max="50" value="0">
-                        <input type="number" class="form-control mt-2" id="verticalOffsetValue" min="-50" max="50" value="0">
-                    </div>
-                    <div class="mb-3">
-                        <label for="blurRadius" class="form-label">Blur Radius (px)</label>
-                        <input type="range" class="form-range" id="blurRadius" min="0" max="50" value="0">
-                        <input type="number" class="form-control mt-2" id="blurRadiusValue" min="0" max="50" value="0">
-                    </div>
-                    <div class="mb-3">
-                        <label for="spreadRadius" class="form-label">Spread Radius (px)</label>
-                        <input type="range" class="form-range" id="spreadRadius" min="0" max="50" value="0">
-                        <input type="number" class="form-control mt-2" id="spreadRadiusValue" min="0" max="50" value="0">
-                    </div>
-                    <div class="mb-3">
-                        <label for="shadowColor" class="form-label">Shadow Color</label>
-                        <input type="color" class="form-control" id="shadowColor" value="#000000">
-                    </div>
-                    <div class="mb-3">
-                        <label for="opacity" class="form-label">Opacity</label>
-                        <input type="range" class="form-range" id="opacity" min="0" max="1" step="0.1" value="1">
-                        <input type="number" class="form-control mt-2" id="opacityValue" min="0" max="1" step="0.1" value="1">
-                    </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="inset" name="inset">
-                            <label class="form-check-label" for="inset">Inset Shadow</label>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Output on the right -->
-            <div class="col-md-6">
-                <div class="preview-box" id="previewBox"></div>
-                <div class="mt-4">
-                    <label for="cssCode" class="form-label">Generated CSS Code</label>
-                    <textarea id="cssCode" class="form-control" rows="6" readonly></textarea>
-                    <button type="button" class="btn btn-success w-100 mt-2" id="copyCssButton">Copy CSS</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-{% endblock %}
-
-{% block scripts %}
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://rohanyeole.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Email Validator",
+              "item": "https://rohanyeole.com/box-shadow/"
+            },
+          ]
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A box shadow is a CSS effect that adds a shadow to an element, creating a depth effect. It is commonly used for styling UI components."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is an example of a shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A common example of a shadow is the shadow cast by an object under sunlight or a CSS box-shadow like box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is drop-shadow an example of?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Drop shadow is an example of a filter effect that adds a shadow to an element but retains transparency, commonly used in images and SVG elements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to customize box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can customize a box shadow by adjusting its horizontal offset, vertical offset, blur radius, spread radius, and color."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to decorate a shadow box?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A shadow box can be decorated using various materials like LED lights, stickers, or layered paper cutouts to enhance its appearance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to read box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A box-shadow property consists of multiple values like horizontal-offset vertical-offset blur-radius spread-radius color, for example: box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you do shadow writing?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shadow writing can be done using text-shadow in CSS, such as text-shadow: 2px 2px 5px rgba(0,0,0,0.5)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How to layer a shadow box?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Layering a shadow box involves stacking elements at different depths to create a 3D effect."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between text shadow and box shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Text-shadow applies shadow effects to text, while box-shadow applies shadows to entire elements."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the types of shadows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Types of shadows include cast shadow, form shadow, core shadow, and CSS-based box-shadow and text-shadow."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between box shadow and drop shadow?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Box-shadow applies to the entire element, while drop-shadow works on the visible part, including transparency."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is shadow texting?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Shadow texting refers to adding a shadow effect to text using CSS or a visual design technique."
+              }
+            }
+          ]
+        }
+    </script>        
     <script src="{% static 'js/generators/css_box_shadow.js' %}"></script>
 {% endblock %}
 
