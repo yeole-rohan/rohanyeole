@@ -1,11 +1,15 @@
 {% extends '../common/base.html' %}
 
 {% block title %}Run Python Online compiler - Free Online Python Compiler & Editor | RohanYeole.com{% endblock %}
-{% block description %}Python compiler lets you write, run, and debug Python code. Perfect for students, developers, and coding enthusiasts. Start coding in Python now!{% endblock %}
+{% block description %}Python compiler lets you write, run, and debug Python code. Perfect for students, developers, and
+coding enthusiasts. Start coding in Python now!{% endblock %}
 
 {% load static %}
 {% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/addon/lint/lint.min.css">
 <link rel="stylesheet" href="{% static 'css/format_minify/format_minify.css' %}">
+
 <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -30,41 +34,54 @@
       }
     }
     
-    </script>
+</script>
 {% endblock %}
 {% block content %}
-<div class="container">
+<div class="container my-5">
     <h1 class="text-center mb-4">JSON Formatter</h1>
-    <div class="card p-4">
-        <!-- Input Section -->
-        <div class="mb-3">
-            <label for="inputJson" class="form-label">Enter Your JSON</label>
-            <textarea id="inputJson" class="form-control" rows="10" placeholder="Paste your JSON here"></textarea>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <textarea id="inputEditor" class="form-control"></textarea>
         </div>
-
-        <!-- Buttons -->
-        <div class="mb-3">
-            <button class="btn btn-primary" id="beautify">Beautify</button>
-            <button class="btn btn-secondary" id="minify">Minify</button>
-            <button class="btn btn-warning" id="clear">Clear</button>
+        <div class="col-md-6">
+            <textarea id="outputEditor" class="form-control" readonly></textarea>
         </div>
-        <!-- Download & Copy -->
-        <div class="mt-4">
-            <button class="btn btn-success" id="copyJson">Copy to Clipboard</button>
-            <button class="btn btn-info" id="downloadJson">Download</button>
-        </div>
-
-        <!-- Output Section -->
-        <div class="mt-4">
-            <label for="outputJson" class="form-label">Formatted JSON</label>
-            <pre id="outputJson" class="form-control output" readonly></pre>
-        </div>
-
     </div>
+    <div class="text-center mb-3">
+        <button class="btn btn-primary" id="formatBtn">Format/Beautify</button>
+        <button class="btn btn-warning" id="minifyBtn">Minify</button>
+        <button class="btn btn-danger" id="validateBtn">Validate JSON</button>
+        <button class="btn btn-success" id="downloadBtn">Download JSON</button>
+    </div>
+    <div class="text-center mb-3">
+        <button class="btn btn-info" id="toCsvBtn">Convert to CSV</button>
+        <button class="btn btn-info" id="toYamlBtn">Convert to YAML</button>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <h6>Upload JSON File</h6>
+            <div class="input-group">
+                <input type="file" id="fileUpload" class="form-control" accept="application/json">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h6>Fetch JSON from URL</h6>
+            <div class="input-group">
+                <input type="url" id="jsonUrl" class="form-control" placeholder="Enter JSON URL">
+                <button class="btn btn-primary ms-2" id="loadUrlBtn">Load</button>
+            </div>
+        </div>
+    </div>
+
 </div>
-
-
 {% endblock %}
 {% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/edit/matchbrackets.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/lint/json-lint.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsonlint/1.6.0/jsonlint.min.js"></script>
+<!-- YAML and XML Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
 <script src="{% static 'js/format_minify/json.js' %}"></script>
 {% endblock %}
