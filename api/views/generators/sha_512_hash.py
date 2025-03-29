@@ -1,11 +1,10 @@
 import hashlib
 from django.views.generic import FormView
-from django.http import JsonResponse
-from api.forms import HashForm
+from api.forms import SHA512HashForm
 
 class SHA512HashGenerator(FormView):
     template_name = "generators/sha512_hash.html"
-    form_class = HashForm
+    form_class = SHA512HashForm
 
     def get_sha_512_hash(self, form):
         text = form.cleaned_data["text"]

@@ -1,6 +1,6 @@
 from django import forms
 
-class SHA512HashForm(forms.Form):
+class MD5HashForm(forms.Form):
     text = forms.CharField(
         label="Enter text",
         widget=forms.Textarea(

@@ -23,6 +23,9 @@ urlpatterns = [
 
     # All Generators URLS
     path('sha512-hash-generator/', views.SHA512HashGenerator.as_view(), name='sha512_generator'),
+    path('sha256-hash-generator/', views.SHA256HashGenerator.as_view(), name='sha256_generator'),
+    path('md5-hash-generator/', views.MD5HashGenerator.as_view(), name='md5_hash_generator'),
+    path('wordpress-password-generator/', views.WordPressPasswordGenerator.as_view(), name="wordpress_password_generator"),
     # All Validators URLS
     path('email-validator/', views.email_validator_view, name='email_validator'),
 

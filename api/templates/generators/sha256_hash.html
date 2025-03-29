@@ -1,0 +1,83 @@
+{% extends '../common/base.html' %}
+
+{% block title %}Box Shadow - Create CSS Box Shadows Instantly | RohanYeole.com{% endblock %}
+{% block description %}Box shadows are a must for modern web design. Use our free generator to create CSS code for box-shadow, -webkit-box-shadow, and -moz-box-shadow in minutes.{% endblock %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="text-center mb-4">SHA-256 Hash Generator</h1>
+
+            <form method="post" id="hash-form">
+                {% csrf_token %}
+                {{form}}
+
+                
+                <div class="d-flex" style="gap:20px">
+                    <button type="button" id="copy-btn" class="btn btn-secondary">Copy</button>
+                    <button type="button" id="clear-btn" class="btn btn-danger">Clear</button>
+                </div>
+            </form>
+            <div class="mb-3">
+                <label class="form-label">SHA-256 Hash:</label>
+                <textarea id="hash-output" class="form-control" rows="4" readonly>{{ sha256_hash }}</textarea>
+            </div>
+        </div>
+    </div>
+    <h2 class="text-center mt-5">SHA-256 Hash Generator FAQ</h2>
+
+    <div class="mb-4">
+        <h4>What is SHA-256 Hash?</h4>
+        <p>SHA-256 is a cryptographic hashing function that generates a 256-bit (32-byte) hash, commonly used in blockchain and digital security.</p>
+    </div>
+
+    <div class="mb-4">
+        <h4>How to generate SHA-256 Hash?</h4>
+        <p>Simply enter text into our <a href="/sha256-hash-generator/" class="fw-bold">SHA-256 Hash Generator</a> to generate a secure hash.</p>
+    </div>
+
+    <div class="mb-4">
+        <h4>Is SHA-256 secure?</h4>
+        <p>Yes, SHA-256 is widely used for cryptographic security, but it is not resistant to quantum computing attacks.</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is SHA-256 Hash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SHA-256 is a cryptographic hashing function that generates a 256-bit (32-byte) hash, commonly used in blockchain and digital security."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How to generate SHA-256 Hash?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply enter text into our SHA-256 Hash Generator to generate a secure hash."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SHA-256 secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, SHA-256 is widely used for cryptographic security, but it is not resistant to quantum computing attacks."
+          }
+        }
+      ]
+    }
+    </script>    
+    <script src="{% static 'js/generators/sha256_hash.js' %}"></script>
+{% endblock %}
+
