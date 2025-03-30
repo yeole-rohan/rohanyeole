@@ -35,4 +35,5 @@ urlpatterns = [
     path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
     path('notepad/', views.notepad_editor, name='notepad_editor'),
     path('parse-url/', views.url_parser, name='parse_url'),
+    path('bitwise-calculator/', views.bitwise_calculator_view, name='bitwise_calculator_view'),
 ]

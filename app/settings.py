@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'api',
 ]
 
@@ -133,3 +135,8 @@ EMAIL_PORT = 587 # or 465
 EMAIL_USE_TLS = True # or EMAIL_USE_SSL
 EMAIL_HOST_USER = os.environ.get('ROHAN_EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('ROHAN_EMAIL_HOST_PASSWORD')
+
+
+# Crispy Forms configuration
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
