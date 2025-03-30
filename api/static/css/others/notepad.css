@@ -1,0 +1,35 @@
+#editor {
+    height: 500px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+.toolbar {
+    margin-bottom: 10px;
+}
+.toolbar button {
+    padding: 8px 12px;
+    margin: 2px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.toolbar button:hover {
+    background: #0056b3;
+}
+/* Fullscreen mode */
+body.fullscreen {
+    margin: 0;
+    padding: 0;
+}
+body.fullscreen #editor {
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+}
+/* Set default font size for the editor */
+.ql-editor {
+    font-size: 25px;
+}

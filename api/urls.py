@@ -31,4 +31,5 @@ urlpatterns = [
 
     # Other Tools URLS
     path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
+    path('notepad/', views.notepad_editor, name='notepad_editor'),
 ]
