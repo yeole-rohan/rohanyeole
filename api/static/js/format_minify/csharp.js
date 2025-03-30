@@ -7,12 +7,15 @@ $(document).ready(function () {
         const clearButton = document.getElementById('clear');
         const copyButton = document.getElementById('copyCs');
         const downloadButton = document.getElementById('downloadCs');
-    
+
+        const default_csharp_code = `using System;class Program{static void Main(string[] args){Console.WriteLine("Welcome to the Unstructured Code Example!");Console.WriteLine("Enter your name:");string name = Console.ReadLine();Console.WriteLine("Hello, " + name + "!");Console.WriteLine("Enter your age:");int age = Convert.ToInt32(Console.ReadLine());if (age > 18){Console.WriteLine("You are an adult.");}else{Console.WriteLine("You are a minor.");}Console.WriteLine("Enter two numbers to add:");int num1 = Convert.ToInt32(Console.ReadLine());int num2 = Convert.ToInt32(Console.ReadLine());int result = num1 + num2;Console.WriteLine("The sum is: " + result);Console.WriteLine("Press any key to exit...");Console.ReadKey();}}`
+        inputCs.textContent = default_csharp_code;
         // Beautify C#
         beautifyButton.addEventListener('click', () => {
             const csCode = inputCs.value;
             const beautified = formatCSharp(csCode);
             outputCs.textContent = beautified;
+            showCustomPopup('Code is beautified.', 'success');
         });
 
         // Minify C#
@@ -20,12 +23,14 @@ $(document).ready(function () {
             const csCode = inputCs.value;
             const minified = minifyCSharp(csCode);
             outputCs.textContent = minified;
+            showCustomPopup('Code is minified.', 'success');
         });
     
         // Clear Input and Output
         clearButton.addEventListener('click', () => {
             inputCs.value = '';
             outputCs.textContent = '';
+            showCustomPopup('Text cleared', 'info');
         });
     
         // Copy to Clipboard
@@ -33,10 +38,10 @@ $(document).ready(function () {
             const formattedCs = outputCs.textContent;
             if (formattedCs) {
                 navigator.clipboard.writeText(formattedCs)
-                    .then(() => alert('C# code copied to clipboard!'))
-                    .catch(() => alert('Failed to copy C# code.'));
+                    .then(() => showCustomPopup('C# code copied to clipboard!', 'success'))
+                    .catch(() => showCustomPopup('Failed to copy C# code.', 'danger'))
             } else {
-                alert('No C# code to copy.');
+                showCustomPopup('No C# code to copy.', 'danger');
             }
         });
     
@@ -51,22 +56,23 @@ $(document).ready(function () {
                 a.download = 'formatted-cs.cs';
                 a.click();
                 URL.revokeObjectURL(url);
+                showCustomPopup('C# code downloaded.', 'success');
             } else {
-                alert('No C# code to download.');
+                showCustomPopup('No C# code to download.', 'danger');
             }
         });
     
         // Manual C# Formatting Logic
         function formatCSharp(code) {
             let indentLevel = 0;
-            const lines = code.split('\n');
+            const lines = code.split(/(?<=[{};])\s*/).filter(line => line.trim() !== '');
             const formattedLines = [];
-    
+            
             lines.forEach(line => {
                 const trimmedLine = line.trim();
     
                 if (trimmedLine.startsWith('}') || trimmedLine.startsWith(']') || trimmedLine.startsWith(')')) {
-                    indentLevel--;
+                    indentLevel = Math.max(0, indentLevel - 1); // Ensure indentLevel doesn't go below 0
                 }
     
                 formattedLines.push('    '.repeat(indentLevel) + trimmedLine);

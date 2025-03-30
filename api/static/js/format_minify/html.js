@@ -8,7 +8,7 @@ document.getElementById('uploadHtml').addEventListener('change', (event) => {
         reader.onload = (e) => {
             const fileContent = e.target.result;
             if (!fileContent.trim()) {
-                alert('The uploaded file is empty. Please upload a valid HTML file.');
+                showCustomPopup('The uploaded file is empty. Please upload a valid HTML file.', 'danger');
                 document.getElementById('uploadHtml').value = ''; // Clear the file input
             } else {
                 document.getElementById('inputHtml').value = fileContent;
@@ -44,8 +44,8 @@ document.getElementById('clear').addEventListener('click', () => {
 document.getElementById('copyHtml').addEventListener('click', () => {
     const outputHtml = document.getElementById('outputHtml').textContent;
     navigator.clipboard.writeText(outputHtml)
-        .then(() => alert('HTML copied to clipboard!'))
-        .catch(() => alert('Failed to copy HTML.'));
+        .then(() => showCustomPopup('HTML copied to clipboard!', 'info'))
+        .catch(() => showCustomPopup('Failed to copy HTML.', 'danger'));
 });
 
 // Download HTML

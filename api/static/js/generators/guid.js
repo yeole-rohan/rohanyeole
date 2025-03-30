@@ -27,8 +27,8 @@ $(document).ready(function () {
     $('#copyButton').on('click', function () {
         const guids = $('#guidOutput').val();
         navigator.clipboard.writeText(guids)
-            .then(() => alert('GUIDs copied to clipboard!'))
-            .catch(() => alert('Failed to copy GUIDs.'));
+            .then(() => showCustomPopup('GUIDs copied to clipboard!', 'info'))
+            .catch(() => showCustomPopup('Failed to copy GUIDs.', 'danger'));
     });
 
     // Clear GUIDs

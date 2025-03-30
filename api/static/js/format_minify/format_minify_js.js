@@ -7,7 +7,9 @@ $(document).ready(function () {
     const clearButton = document.getElementById('clear');
     const copyButton = document.getElementById('copyJs');
     const downloadButton = document.getElementById('downloadJs');
-
+const default_js_code = `function calculateTotal(products){let total=0;for(let i=0;i<products.length;i++){total+=products[i].price;}if(total>100){let discount=total*0.1;total-=discount;}return total;}const products=[{name:'Laptop',price:1200},{name:'Phone',price:800},{name:'Tablet',price:500}];const total=calculateTotal(products);console.log('Total:',total);
+`
+    inputJs.textContent = default_js_code;
     // Beautify Markdown
     beautifyButton.addEventListener('click', () => {
         const markdown = inputJs.value;
@@ -33,10 +35,10 @@ $(document).ready(function () {
         const formattedMarkdown = outputJs.textContent;
         if (formattedMarkdown) {
             navigator.clipboard.writeText(formattedMarkdown)
-                .then(() => alert('Markdown copied to clipboard!'))
-                .catch(() => alert('Failed to copy Markdown.'));
+                .then(() => showCustomPopup('Markdown copied to clipboard!', 'info'))
+                .catch(() => showCustomPopup('Failed to copy Markdown.', 'danger'));
         } else {
-            alert('No Markdown to copy.');
+            showCustomPopup('No Markdown to copy.', 'danger');
         }
     });
 
@@ -52,7 +54,7 @@ $(document).ready(function () {
             a.click();
             URL.revokeObjectURL(url);
         } else {
-            alert('No Markdown to download.');
+            showCustomPopup('No Markdown to download.', 'danger');
         }
     });
 

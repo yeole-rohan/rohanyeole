@@ -57,8 +57,8 @@ document.getElementById('copyCssButton').addEventListener('click', () => {
     const cssCode = document.getElementById('cssCode');
     cssCode.select();
     navigator.clipboard.writeText(cssCode.value)
-        .then(() => alert('CSS copied to clipboard!'))
-        .catch(() => alert('Failed to copy CSS.'));
+        .then(() => showCustomPopup('CSS copied to clipboard!', 'info'))
+        .catch(() => showCustomPopup('Failed to copy CSS.', 'danger'));
 });
 
 // Convert HEX to RGBA

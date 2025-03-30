@@ -28,7 +28,7 @@ $(document).ready(function () {
     // Copy to Clipboard
     copyBtn.addEventListener("click", function () {
         navigator.clipboard.writeText(hashOutput.value);
-        alert("Hash copied to clipboard!");
+        showCustomPopup("Hash copied to clipboard!", 'info');
     });
 
     // Clear Inputs

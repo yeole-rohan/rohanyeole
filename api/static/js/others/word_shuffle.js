@@ -20,7 +20,7 @@ $(document).ready(function () {
         let outputText = document.getElementById("outputText");
         outputText.select();
         document.execCommand("copy");
-        alert("Shuffled text copied!");
+        showCustomPopup("Shuffled text copied!", 'info');
     }
     
     // Download shuffled text function

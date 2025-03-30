@@ -27,8 +27,8 @@ document.getElementById('clear').addEventListener('click', () => {
 document.getElementById('copyMarkdown').addEventListener('click', () => {
     const outputMarkdown = document.getElementById('outputMarkdown').textContent;
     navigator.clipboard.writeText(outputMarkdown)
-        .then(() => alert('Markdown copied to clipboard!'))
-        .catch(() => alert('Failed to copy Markdown.'));
+        .then(() => showCustomPopup('Markdown copied to clipboard!', 'info'))
+        .catch(() => showCustomPopup('Failed to copy Markdown.', 'danger'));
 });
 
 // Download Markdown
@@ -47,6 +47,7 @@ document.getElementById('downloadMarkdown').addEventListener('click', () => {
 function beautifyMarkdown(markdown) {
     let formatted = '';
     const lines = markdown.split('\n');
+    let inList = false; // Track if we're inside a list
 
     lines.forEach((line, index) => {
         const trimmed = line.trim();
@@ -56,16 +57,30 @@ function beautifyMarkdown(markdown) {
             formatted += '\n';
         }
 
-        // Add a blank line before lists
-        if ((trimmed.startsWith('-') || trimmed.startsWith('*')) && index > 0 && !lines[index - 1].trim().startsWith('-') && !lines[index - 1].trim().startsWith('*')) {
+        // Add a blank line before lists (if not already in a list)
+        if ((trimmed.startsWith('-') || trimmed.startsWith('*')) && !inList) {
+            formatted += '\n';
+            inList = true; // Mark that we're inside a list
+        }
+
+        // Add a blank line after lists (if exiting a list)
+        if (inList && !(trimmed.startsWith('-') || trimmed.startsWith('*')) && trimmed !== '') {
+            formatted += '\n';
+            inList = false; // Mark that we're exiting the list
+        }
+
+        // Add a blank line between paragraphs
+        if (trimmed !== '' && index > 0 && lines[index - 1].trim() !== '' && !trimmed.startsWith('#') && !trimmed.startsWith('-') && !trimmed.startsWith('*')) {
             formatted += '\n';
         }
 
+        // Add the trimmed line to the formatted output
         formatted += trimmed + '\n';
     });
 
-    return formatted.trim();
+    return formatted.trim(); // Remove trailing whitespace
 }
+
 
 // Minify Markdown Logic
 function minifyMarkdown(markdown) {

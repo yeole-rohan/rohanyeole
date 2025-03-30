@@ -8,7 +8,7 @@ $(document).ready(function () {
             reader.onload = (e) => {
                 const fileContent = e.target.result;
                 if (!fileContent.trim()) {
-                    alert('The uploaded file is empty. Please upload a valid CSS file.');
+                    showCustomPopup('The uploaded file is empty. Please upload a valid CSS file.', 'danger');
                     document.getElementById('uploadCss').value = ''; // Clear the file input
                 } else {
                     document.getElementById('inputCss').value = fileContent;
@@ -44,8 +44,8 @@ $(document).ready(function () {
     document.getElementById('copyCss').addEventListener('click', () => {
         const outputCss = document.getElementById('outputCss').textContent;
         navigator.clipboard.writeText(outputCss)
-            .then(() => alert('CSS copied to clipboard!'))
-            .catch(() => alert('Failed to copy CSS.'));
+            .then(() => showCustomPopup('CSS copied to clipboard!', 'success'))
+            .catch(() => showCustomPopup('Failed to copy CSS.', 'danger'));
     });
 
     // Download CSS

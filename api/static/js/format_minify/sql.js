@@ -1,17 +1,18 @@
 var $ = jQuery.noConflict();
 $(document).ready(function () {
+    const inputSQL = document.getElementById('inputSQL');
+    const unformattedSQL = `SELECT name, age, address FROM customers WHERE age > 18 AND (country = 'USA' OR country = 'Canada') ORDER BY last_name;`;
+    inputSQL.value = unformattedSQL;
     // Beautify SQL
     document.getElementById('beautify').addEventListener('click', () => {
-        const inputSQL = document.getElementById('inputSQL').value;
-        const formattedSQL = beautifySQL(inputSQL);
+        const formattedSQL = beautifySQL(inputSQL.value);
         document.getElementById('outputSQL').textContent = formattedSQL;
         document.getElementById('downloadSQL').disabled = false;
     });
 
     // Minify SQL
     document.getElementById('minify').addEventListener('click', () => {
-        const inputSQL = document.getElementById('inputSQL').value;
-        const minifiedSQL = minifySQL(inputSQL);
+        const minifiedSQL = minifySQL(inputSQL.value);
         document.getElementById('outputSQL').textContent = minifiedSQL;
         document.getElementById('downloadSQL').disabled = false;
     });
@@ -27,8 +28,8 @@ $(document).ready(function () {
     document.getElementById('copySQL').addEventListener('click', () => {
         const outputSQL = document.getElementById('outputSQL').textContent;
         navigator.clipboard.writeText(outputSQL)
-            .then(() => alert('SQL copied to clipboard!'))
-            .catch(() => alert('Failed to copy SQL.'));
+            .then(() => showCustomPopup('SQL copied to clipboard!', 'info'))
+            .catch(() => showCustomPopup('Failed to copy SQL.', 'danger'));
     });
 
     // Download SQL
@@ -47,24 +48,53 @@ $(document).ready(function () {
     function beautifySQL(sql) {
         let formatted = '';
         let indentLevel = 0;
-        const lines = sql.split('\n');
-
-        lines.forEach(line => {
-            const trimmed = line.trim();
-
-            if (trimmed.startsWith(')') || trimmed.startsWith('END')) {
+        const keywords = [
+            'SELECT', 'FROM', 'WHERE', 'JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'INNER JOIN','GROUP BY', 'ORDER BY', 'HAVING', 'LIMIT', 'UNION', 'UNION ALL', 'AND', 'OR'
+        ];
+        const tokens = sql.replace(/\s+/g, ' ').split(' '); // Replace multiple spaces with a single space
+    
+        for (let i = 0; i < tokens.length; i++) {
+            const token = tokens[i];
+            const upperToken = token.toUpperCase();
+            // console.log(token);
+            
+            // Handle closing keywords (reduce indentation)
+            if (upperToken === 'END' || upperToken === ')' || upperToken === 'ELSE') {
                 indentLevel--;
             }
-
-            formatted += '  '.repeat(indentLevel) + trimmed + '\n';
-
-            if (trimmed.endsWith('(') || trimmed.startsWith('CASE') || trimmed.startsWith('BEGIN')) {
+            console.log(keywords.includes(upperToken));
+            
+            // Add new line and indentation for major clauses
+            if (keywords.includes(upperToken)) {
+                formatted += '\n' + '    '.repeat(indentLevel) + token + '\n ';
+                console.log(formatted);
+            }
+            
+            // Handle commas in SELECT clauses (add new line and indentation)
+            else if (token.includes(',')) {
+                formatted += token + '\n' + '    '.repeat(indentLevel + 1);
+            }
+            // Handle opening keywords (increase indentation and add new line)
+            else if (upperToken === 'BEGIN' || upperToken === 'CASE' || upperToken === '(') {
+                formatted += '\n' + '    '.repeat(indentLevel) + token + '\n';
                 indentLevel++;
             }
-        });
-
-        return formatted.trim();
+            // Handle regular tokens
+            else {
+                formatted += token + ' ';
+            }
+    
+            // Handle closing keywords (add new line and indentation)
+            if (upperToken === 'END' || upperToken === ')') {
+                formatted += '\n' + '    '.repeat(indentLevel);
+            }
+        }
+        console.log(formatted);
+        
+        return formatted.trim(); // Remove trailing whitespace
     }
+    
+    
 
     // Minify SQL Logic
     function minifySQL(sql) {
