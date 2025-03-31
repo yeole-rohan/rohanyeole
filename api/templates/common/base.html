@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{% static 'css/common/common.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/common/common.css'%}" />
     <meta name="author" content="Rohan Yeole">
     <!-- Set below on dynamic for each url on website on SEO time -->
     <meta property="og:title" content="Email Validator - Check If an Email is Valid">
@@ -33,7 +33,7 @@
     <header class="navbar-light bg-light">
         <nav class="container navbar navbar-expand-lg ">
             <a class="navbar-brand" href="{% url 'home' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-            title="Go to Home Page">My Website</a>
+            title="Go to Home Page">Rohan Yeole</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -81,12 +81,7 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer>
-        <div class="container text-center py-3">
-            <p>© 2025 My Website</p>
-        </div>
-        <div class="custom-popup" id="customPopup"></div>
-    </footer>
+    {% include './footer.html' %}
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
