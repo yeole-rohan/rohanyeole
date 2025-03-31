@@ -1,20 +1,28 @@
-<footer>
-   <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            &copy;2025 Rohan Yeole. All Rights Reserved.
-          </div>
-          <div class="col-lg-6">
-            <ul>
-              <li><a href="/status" target="_blank" rel="noopener noreferrer">Status</a></li>
-              <li><a href="/legal" target="_blank" rel="noopener noreferrer">Legal</a></li>
-              <li><a href="/privacy" target="_blank" rel="noopener noreferrer">Privacy</a></li>
-              <li><a href="/terms" target="_blank" rel="noopener noreferrer">Terms</a></li>
-            </ul>
-          </div>
-        </div>
+{% load static %}
+<footer class="footer">
+   <div class="footer__container container">
+      <div class="footer__logo__text">
+         <h1>
+            <img data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid" >
+            <span>Rohan Yeole</span>
+         </h1>
       </div>
-    </footer>
+      <hr>
+     <div class="footer__row">
+       <!-- Left Section -->
+       <div class="footer__left">
+         ©2025 Rohan Yeole. All Rights Reserved.
+       </div>
+       <!-- Right Section -->
+       <div class="footer__right">
+         <a href="/status" class="footer__link" target="_blank" rel="noopener noreferrer">Status</a>
+         <a href="/legal" class="footer__link" target="_blank" rel="noopener noreferrer">Legal</a>
+         <a href="/privacy" class="footer__link" target="_blank" rel="noopener noreferrer">Privacy</a>
+         <a href="/terms" class="footer__link" target="_blank" rel="noopener noreferrer">Terms</a>
+       </div>
+     </div>
+   </div>
+</footer>
    <div class="custom-popup" id="customPopup"></div>
 </footer>
