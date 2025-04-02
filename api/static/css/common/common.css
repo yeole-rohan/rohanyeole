@@ -52,9 +52,11 @@ body {
     justify-content: center;
     margin-bottom: 25px;
 }
-.footer{
-    margin: 35px ;
+
+.footer {
+    margin: 35px;
 }
+
 .footer__logo__text img {
     width: 57px;
 }
@@ -91,11 +93,45 @@ body {
 }
 
 
+.social-section__logo.linkedin {
+    background: #0075B5;
+    border-radius: 100%;
+    padding: 4px;
+}
+
+/* Links List */
+.social-section__list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Link Styling */
+.social-section__link {
+    text-decoration: none;
+    font-size: 24px;
+    line-height: 40px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.social-section__link:hover {
+    color: #0056b3;
+}
+
 /* Mobile Modifier */
 @media (max-width: 767px) {
     .footer__row {
         flex-direction: column-reverse;
         text-align: center;
+    }
+
+    .social-section__list {
+        flex-direction: row;
+        gap: 10px;
+        padding-left: 0;
+        flex-wrap: wrap;
     }
 
     .footer__right {
