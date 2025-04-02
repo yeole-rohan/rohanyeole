@@ -6,3 +6,4 @@ from .formatter_minify import *
 from .parser import *
 from .validators import *
 from .others import *
+from .converters import *

@@ -9,7 +9,6 @@ urlpatterns = [
     path('online-python-compiler/', views.PythonEditorView.as_view(), name='python_editor'),
     path('guid/', views.generate_guid, name='generate_guid'),
     path('box-shadow/', views.CSSBoxView.as_view(), name='css_box_shadow'),
-    path('slug-generator/',views.SlugView.as_view(), name='slug'),
 
     # Minify and Buetify URLS
     path('css-minify-buetify/',views.FormatMinifyCSSView.as_view(), name='css_format_minify'),
@@ -27,10 +26,13 @@ urlpatterns = [
     path('sha256-hash-generator/', views.SHA256HashGenerator.as_view(), name='sha256_generator'),
     path('md5-hash-generator/', views.MD5HashGenerator.as_view(), name='md5_hash_generator'),
     path('wordpress-password-generator/', views.WordPressPasswordGenerator.as_view(), name="wordpress_password_generator"),
-    
+    path('slug-generator/',views.SlugView.as_view(), name='slug'),
+
     # All Validators URLS
     path('email-validator/', views.email_validator_view, name='email_validator'),
 
+    # All Converters
+    path('xml-to-json/', views.XMLToJsonConverterView.as_view(), name='xml_to_json_converter'),
     # Other Tools URLS
     path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
     path('notepad/', views.notepad_editor, name='notepad_editor'),

@@ -61,7 +61,7 @@ body {
     width: 57px;
 }
 
-.footer__logo__text span {
+.footer__logo__text span, header h1 span {
     font-size: 40px;
     font-weight: bold;
     line-height: 48px;
@@ -119,7 +119,79 @@ body {
 .social-section__link:hover {
     color: #0056b3;
 }
+ /* Header Styling */
+ .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+  }
+  .header_bg{
+    background-color: #EBFCF4;
+  }
 
+  /* Left Section */
+  .header__left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header__logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header__name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  /* Middle Section */
+  .header__middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 10px;
+    background-color: #CDF6E4;
+    border-radius: 8px;
+  }
+
+  .header__link {
+    text-decoration: none;
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .header__link:hover {
+    color: #00AD65;
+  }
+
+  /* Right Section */
+  .header__right {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header__contact {
+    text-decoration: none;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #38D191;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .header__contact:hover {
+    background-color: #00AD65;
+    color: #000;
+  }
 /* Mobile Modifier */
 @media (max-width: 767px) {
     .footer__row {

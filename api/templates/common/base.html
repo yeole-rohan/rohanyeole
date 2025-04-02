@@ -30,52 +30,30 @@
 </head>
 
 <body>
-    <header class="navbar-light bg-light">
-        <nav class="container navbar navbar-expand-lg ">
-            <a class="navbar-brand" href="{% url 'home' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-            title="Go to Home Page">Rohan Yeole</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'html_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Create HTML Page">HTML Editor</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{% url 'css_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Style HTML Page">CSS Editor</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{% url 'js_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Start Coding in JS">JS Editor</a>
-                    </li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link" href="{% url 'python_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Run Python Program">Python Compiler</a>
-                    </li> -->
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{% url 'generate_guid' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Generate GUID">Generate GUID</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{% url 'css_box_shadow' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="CSS Box Shadow">CSS Box Shadow</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="{% url 'slug' %}" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                    title="Create Slug">Slug</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="How to Contact Me?">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <!-- Header Section -->
+<header class="header_bg">
+    <div class="container header header_bg">
+
+        <!-- Left Section: Logo and Name -->
+        <h1>
+            <img data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid" >
+            <span>Rohan Yeole</span>
+         </h1>
+      
+        <!-- Middle Section: Links -->
+        <nav class="header__middle">
+          <a href="/tools" class="header__link">Tools</a>
+          <a href="/products" class="header__link">Products</a>
+          <a href="/blogs" class="header__link">Blogs</a>
         </nav>
-    </header>
+      
+        <!-- Right Section: Contact Button -->
+        <div class="header__right">
+          <a href="/contact" class="header__contact">Contact Me</a>
+        </div>
+    </div>
+  </header>
 
     <main class="main-section">
         {% block content %}{% endblock %}
