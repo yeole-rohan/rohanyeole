@@ -124,11 +124,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 20px 0;
     background-color: #ffffff;
   }
   .header_bg{
     background-color: #EBFCF4;
+  }
+  .header h1{
+    margin: 0;
   }
 
   /* Left Section */
@@ -198,7 +201,12 @@ body {
         flex-direction: column-reverse;
         text-align: center;
     }
-
+    .header_bg h1 img{
+        height: 32px;
+     }
+     .header{
+        padding: 10px 0;
+     }
     .social-section__list {
         flex-direction: row;
         gap: 10px;
@@ -214,7 +222,10 @@ body {
         flex-direction: row;
         gap: 10px;
     }
-
+    .header_bg h1 span, .footer__logo__text span{
+        font-size: 25px;
+    line-height: 33px;
+    }
     .footer__link {
         font-size: 16px;
         line-height: 24px;

@@ -1,0 +1,56 @@
+#rohan-headline {
+   padding: 115px 0;
+   background-color: #EBFCF4;
+}
+
+#rohan-headline h1 span {
+   color: #38D191;
+}
+
+#rohan-headline h1 {
+   font-size: 40px;
+   line-height: 48px;
+   font-weight: bold;
+   color: #000;
+}
+
+#rohan-headline .rohan-headline__btns {
+   margin-top: 40px;
+}
+
+#rohan-headline .rohan-headline__btns a {
+   text-decoration: none;
+   padding: 15px 45px;
+   border-radius: 12px;
+   font-weight: bold;
+   font-size: 20px;
+   line-height: 28px;
+}
+
+#rohan-headline .rohan-headline__btns__hire_me {
+   background-color: #38D191;
+   color: #000;
+}
+
+/* Mobile Modifier */
+@media (max-width: 767px) {
+   #rohan-headline{
+      padding: 55px 0;
+   }
+   #rohan-headline h1 {
+      font-size: 25px;
+      line-height: 33px;
+   }
+   #rohan-headline .rohan-headline__btns{
+      margin-top: 20px;
+   }
+   #rohan-headline .rohan-headline__btns a{
+      padding: 10px 20px;
+      font-size: 15px;
+  line-height: 23px;
+   }
+   #rohan-headline img, .footer__logo__text img{
+      height: 40px;
+   }
+  
+}
