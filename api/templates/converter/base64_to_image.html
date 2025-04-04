@@ -1,0 +1,63 @@
+{% extends '../common/base.html' %}
+
+{% block title %}XML to JSON Converter | RohanYeole.com{% endblock %}
+{% block description %}CSS online editor lets you edit and preview CSS code in real-time. Perfect for developers and
+designers. Start styling now!{% endblock %}
+
+{% load static %}
+{% block head %}
+<style>
+    /* Loader */
+    .loader {
+        display: none;
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #imagePreview {
+        max-width: 100%;
+        max-height: 200px;
+        display: none;
+        margin-top: 15px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">Base64 to Image Converter</h2>
+
+    <div class="container-flex">
+        <!-- Left: Base64 Input -->
+        <div class="box">
+            <label for="base64Input" class="form-label"><strong>Paste Base64 Code:</strong></label>
+            <textarea id="base64Input" class="form-control" rows="6"></textarea>
+            <button class="btn btn-primary mt-3" id="convertBtn">Convert to Image</button>
+
+            <!-- Loader -->
+            <div class="loader" id="loader">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Converting...</span>
+                </div>
+                <p>Converting...</p>
+            </div>
+        </div>
+
+        <!-- Right: Image Preview & Download -->
+        <div class="box">
+            <img id="imagePreview">
+            <div class="btn-group mt-3">
+                <button class="btn btn-info" id="downloadBtn">Download Image</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/converters/base64_to_image.js' %}"></script>
+{% endblock %}

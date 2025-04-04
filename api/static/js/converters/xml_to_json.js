@@ -100,7 +100,17 @@ $(document).ready(function () {
       showCustomPopup('Please provide XML data either by pasting or uploading a file.', 'danger');
     }
   });
+  document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
 
+    if (file) {
+        const fileType = file.name.split('.').pop().toLowerCase();
+        if (fileType !== "xml") {
+          showCustomPopup('Please select a valid XML file.', 'danger');
+            event.target.value = ''; // Reset file input
+        }
+    }
+});
   // Download the JSON as a file
   document.getElementById('downloadBtn').addEventListener('click', function () {
     var jsonContent = jsonEditor.getValue(); // Get the JSON content from CodeMirror
@@ -121,8 +131,7 @@ $(document).ready(function () {
     navigator.clipboard.writeText(jsonContent).then(function () {
       showCustomPopup('JSON copied to clipboard!', 'info');
     }, function (err) {
-      showCustomPopup('Text cleared', 'danger');
-      console.error('Could not copy text: ', err);
+      showCustomPopup('Could not copy text', 'danger');
     });
   });
 })

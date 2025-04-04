@@ -1,1 +1,3 @@
 from .xml_to_json import XMLToJsonConverterView
+from .image_to_base64 import ImageToBase64ConverterView
+from .base64_to_image import Base64ToImageConverterView

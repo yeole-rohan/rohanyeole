@@ -33,6 +33,8 @@ urlpatterns = [
 
     # All Converters
     path('xml-to-json/', views.XMLToJsonConverterView.as_view(), name='xml_to_json_converter'),
+    path('image-to-base64/',  views.ImageToBase64ConverterView.as_view(), name='image_to_base64_converter'),
+    path('base64-to-image/',  views.Base64ToImageConverterView.as_view(), name='base64_to_image_converter'),
     # Other Tools URLS
     path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
     path('notepad/', views.notepad_editor, name='notepad_editor'),
