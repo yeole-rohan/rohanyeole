@@ -1,0 +1,40 @@
+{% extends '../common/base.html' %}
+{% load static %}
+{% block title %}source_code_viewer | RohanYeole.com {% endblock %}
+{% block description %}Free online word shuffler tool. Just enter the text to get new text with word shuffled.{% endblock %}
+{% block head %}
+<style>
+   textarea, pre { width: 100%; max-height: 500px;overflow: auto; border: 1px solid black;}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+   <h1>Remote Site HTML Viewer</h1>
+
+   <form method="post">
+       {% csrf_token %}
+       <input type="text" class="form-control" name="url" placeholder="Enter full URL (https://...)" size="60" value="{{ url }}">
+       <button class="btn btn-primary mt-2" type="submit">Fetch HTML</button>
+       
+   </form>
+
+   {% if html_content %}
+       <h2>Source Code</h2>
+       <div style="margin: 1rem 0;">
+         <button class="btn btn-primary me-2" id="copy-btn">📋 Copy Code</button>
+         <button class="btn btn-primary" id="download-btn">💾 Download HTML</button>
+         <button class="btn btn-primary ms-2"  id="format-btn">🧹 Format HTML</button>
+     </div>
+     
+     <pre id="code-block"><code class="language-markup">{{ html_content|escape }}</code></pre>
+   {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+   <script async src="https://cdn.jsdelivr.net/npm/js-beautify@1.14.0/js/lib/beautify-html.min.js"></script>
+
+   <script src="{% static 'js/others/source_code_viewer.js' %}"></script>
+
+{% endblock %}
+
