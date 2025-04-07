@@ -9,6 +9,7 @@
 
 {% endblock %}
 {% block content %}
+
 <section id="rohan-headline" class="text-center">
     <h1>Hi,
         <span  data-bs-toggle="tooltip" data-bs-placement="top" title="Spent 6+ yrs in IT industry.">I'm Rohan</span>
@@ -25,7 +26,38 @@
 </section>
 <div class="container">
     <section id="about-me"></section>
-    <section id="rohan-skills"></section>
+    <section id="rohan-skills">
+        <div class="rohan-skills__head">
+            <h2>Skills</h2>
+            <p>Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy font.</p>
+        </div>
+        <div class="rohan-skills__list">
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+               <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+               <span>Python</span>
+            </a>
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>CSS</span>
+             </a>
+             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>HTML</span>
+             </a>
+             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>JavaScript</span>
+             </a>
+             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>Django</span>
+             </a>
+             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>GraphQL</span>
+             </a>
+        </div>
+    </section>
     <section id="rohan-experience"></section>
     
 </div>

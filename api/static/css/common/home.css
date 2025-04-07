@@ -32,25 +32,82 @@
    color: #000;
 }
 
+.rohan-skills__head {
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 32px;
+}
+
+.rohan-skills__list {
+   display: flex;
+   gap: 25px;
+   flex-wrap: wrap;
+}
+#rohan-skills{
+   margin: 125px 0;
+}
+.rohan-skills__list a {
+   border-radius: 12px;
+   padding: 15px 25px;
+   border: 1px solid #cdf6e4;
+   font-weight: bold;
+   cursor: pointer;
+   font-size: 24px;
+   line-height: 32px;
+}
+
+.rohan-skills__head p {
+   max-width: 630px;
+}
+
 /* Mobile Modifier */
+@media (max-width: 1024px) {
+   .container, .container-md, .container-sm{
+      max-width: 100%;
+   }
+   .header {
+      padding:10px 13.5px;
+   }
+}
 @media (max-width: 767px) {
-   #rohan-headline{
+   #rohan-headline {
       padding: 55px 0;
    }
+
    #rohan-headline h1 {
       font-size: 25px;
       line-height: 33px;
    }
-   #rohan-headline .rohan-headline__btns{
+
+   #rohan-headline .rohan-headline__btns {
       margin-top: 20px;
    }
-   #rohan-headline .rohan-headline__btns a{
+   .rohan-skills__list a{
+      font-size: 18px;
+      line-height: 26px;
+   }
+   .rohan-skills__list a img{
+      height: 30px;
+   }
+   .rohan-skills__list{
+      gap: 10px;
+   }
+   #rohan-skills{
+      margin: 60px 0;
+   }
+   .rohan-skills__head{
+      flex-direction: column;
+      margin-bottom: 18px;
+   }
+   #rohan-headline .rohan-headline__btns a {
       padding: 10px 20px;
       font-size: 15px;
-  line-height: 23px;
+      line-height: 23px;
    }
-   #rohan-headline img, .footer__logo__text img{
+
+   #rohan-headline img,
+   .footer__logo__text img {
       height: 40px;
    }
-  
+
 }

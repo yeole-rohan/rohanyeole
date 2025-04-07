@@ -2,6 +2,9 @@ from django.urls import path
 from . import views 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
+    path('product/', views.ProductView.as_view(), name='product_list'),
+    path('blogs/', views.BlogsView.as_view(), name='blogs_list'),
+    path('tools/', views.ToolsView.as_view(), name='tools_list'),
     path('html-online-editor/', views.HTMLEditorView.as_view(), name='html_editor'),
     path('css-online-editor/', views.CSSEditorView.as_view(), name='css_editor'),
     path('js-online-editor/', views.JSEditorView.as_view(), name='js_editor'),
@@ -35,6 +38,8 @@ urlpatterns = [
     path('xml-to-json/', views.XMLToJsonConverterView.as_view(), name='xml_to_json_converter'),
     path('image-to-base64/',  views.ImageToBase64ConverterView.as_view(), name='image_to_base64_converter'),
     path('base64-to-image/',  views.Base64ToImageConverterView.as_view(), name='base64_to_image_converter'),
+    path('image-to-ascii/', views.ImageToAsciiConverterView.as_view(), name='image_to_ascii'),
+    
     # Other Tools URLS
     path('word-shuffle/', views.shuffle_words, name='word_shuffle'),
     path('notepad/', views.notepad_editor, name='notepad_editor'),

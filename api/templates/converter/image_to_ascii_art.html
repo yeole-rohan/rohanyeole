@@ -1,0 +1,50 @@
+{% extends '../common/base.html' %}
+
+{% block title %}XML to JSON Converter | RohanYeole.com{% endblock %}
+{% block description %}CSS online editor lets you edit and preview CSS code in real-time. Perfect for developers and
+designers. Start styling now!{% endblock %}
+
+{% load static %}
+{% block head %}
+<style>
+
+   #ascii {
+      white-space: pre;
+      background: black;
+      color: white;
+      letter-spacing: unset;
+      transform: unset;
+      overflow-y: hidden;
+      text-align: center;
+   }
+   
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+   <h1 class="text-center mb-4 display-4">🖼️ Image to ASCII Art Converter</h1>
+        
+   <div class="row g-3 mb-4">
+      <div class="col-12">
+            <input type="file" id="imageInput" class="form-control bg-dark text-light" accept="image/*">
+      </div>
+      <div class="col-12 d-flex gap-2 justify-content-end">
+            <button class="btn btn-primary px-4" id="copyBtn">
+               <i class="bi bi-clipboard me-2"></i>Copy
+            </button>
+            <button class="btn btn-primary px-4" id="downloadBtn">
+               <i class="bi bi-download me-2"></i>Download
+            </button>
+      </div>
+   </div>
+
+   <div id="ascii" class="shadow-lg p-3">
+      <pre id="ascii-art" class="mb-0"></pre>
+   </div>
+{% endblock %}
+
+{% block scripts %}
+
+<script src="{% static 'js/converters/image_to_ascii.js' %}"></script>
+{% endblock %}

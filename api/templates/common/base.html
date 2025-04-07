@@ -35,28 +35,26 @@
     <div class="container header header_bg">
 
         <!-- Left Section: Logo and Name -->
-        <h1>
-            <img data-bs-toggle="tooltip" data-bs-placement="bottom"
-            title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid" >
-            <span>Rohan Yeole</span>
-         </h1>
-      
+         <a href="{% url 'home' %}">
+            <h1>
+                <img data-bs-toggle="tooltip" data-bs-placement="bottom"
+                title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid" >
+                <span>Rohan Yeole</span>
+            </h1>
+        </a>
         <!-- Middle Section: Links -->
         <nav class="header__middle">
           <a href="/tools" class="header__link">Tools</a>
           <a href="/products" class="header__link">Products</a>
           <a href="/blogs" class="header__link">Blogs</a>
         </nav>
-      
-        <!-- Right Section: Contact Button -->
-        <div class="header__right">
-          <a href="/contact" class="header__contact">Contact Me</a>
-        </div>
     </div>
   </header>
 
     <main class="main-section">
+        {% spaceless %}
         {% block content %}{% endblock %}
+        {% endspaceless %}
     </main>
 
     {% include './footer.html' %}
