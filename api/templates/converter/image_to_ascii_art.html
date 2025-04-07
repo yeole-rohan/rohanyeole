@@ -10,8 +10,8 @@ designers. Start styling now!{% endblock %}
 
    #ascii {
       white-space: pre;
-      background: black;
       color: white;
+      background-color: black;
       letter-spacing: unset;
       transform: unset;
       overflow-y: hidden;
@@ -38,9 +38,13 @@ designers. Start styling now!{% endblock %}
             </button>
       </div>
    </div>
+   <div class="row">
+      <div class="col-6 m-auto">
+         <div id="ascii">
+            <pre id="ascii-art" class="mb-0"></pre>
+         </div>
 
-   <div id="ascii" class="shadow-lg p-3">
-      <pre id="ascii-art" class="mb-0"></pre>
+      </div>
    </div>
 {% endblock %}
 
