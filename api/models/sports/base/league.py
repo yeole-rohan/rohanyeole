@@ -1,9 +1,9 @@
 from django.db import models
 from api.models.mixins import GlobalIdMixin, AuditMixin
-from api.models.sports import Sport
+from .sport import Sport
 
 class League(GlobalIdMixin, AuditMixin):
-   sport = models.ForeignKey(Sport, on_delete=models.CASCADE, related_name='leagues')
+   sport = models.ForeignKey(Sport, on_delete=models.CASCADE, related_name='sport_leagues')
    name = models.CharField(max_length=150)
    country = models.CharField(max_length=100, blank=True, null=True)
 

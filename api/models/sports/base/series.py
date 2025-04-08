@@ -1,6 +1,6 @@
 from django.db import models
 from api.models.mixins import GlobalIdMixin, AuditMixin
-from api.models.sports import League
+from .league import League
 
 class Series( GlobalIdMixin, AuditMixin):
     STATUS_CHOICES = [
@@ -9,7 +9,7 @@ class Series( GlobalIdMixin, AuditMixin):
         ('completed', 'Completed')
     ]
 
-    league = models.ForeignKey(League, on_delete=models.CASCADE, related_name='series')
+    league = models.ForeignKey(League, on_delete=models.CASCADE, related_name='league_series')
     name = models.CharField(max_length=200)
     start_date = models.DateField()
     end_date = models.DateField()
