@@ -30,15 +30,16 @@
 </head>
 
 <body>
+    {% spaceless %}
     <!-- Header Section -->
 <header class="header_bg">
     <div class="container header header_bg">
 
         <!-- Left Section: Logo and Name -->
          <a href="{% url 'home' %}">
-            <h1>
+            <h1 class="d-flex">
                 <img data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid" >
+                title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid me-1" >
                 <span>Rohan Yeole</span>
             </h1>
         </a>
@@ -50,7 +51,7 @@
         </nav>
     </div>
   </header>
-
+  {% endspaceless %}
     <main class="main-section">
         {% spaceless %}
         {% block content %}{% endblock %}
