@@ -46,4 +46,7 @@ urlpatterns = [
     path('parse-url/', views.url_parser, name='parse_url'),
     path('bitwise-calculator/', views.bitwise_calculator_view, name='bitwise_calculator_view'),
     path('source-code-viewer/', views.source_code_viewer, name='source_code_viewer'),
+    
+    # Sports URLS
+    path('sports/', views.SportHomeView.as_view(), name='sport_home'),
 ]

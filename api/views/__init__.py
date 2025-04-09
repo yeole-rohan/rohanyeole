@@ -7,3 +7,4 @@ from .parser import *
 from .validators import *
 from .others import *
 from .converters import *
+from .sports import *

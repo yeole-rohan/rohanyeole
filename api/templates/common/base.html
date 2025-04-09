@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    {% spaceless %}
+{% spaceless %}
     <!-- Header Section -->
 <header class="header_bg">
     <div class="container header header_bg">
@@ -48,10 +48,11 @@
           <a href="/tools" class="header__link">Tools</a>
           <a href="/products" class="header__link">Products</a>
           <a href="/blogs" class="header__link">Blogs</a>
+          <a href="{% url 'sport_home' %}" class="header__link">Sports</a>
         </nav>
     </div>
   </header>
-  {% endspaceless %}
+{% endspaceless %}
     <main class="main-section">
         {% spaceless %}
         {% block content %}{% endblock %}
