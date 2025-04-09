@@ -78,16 +78,21 @@
 
             <!-- Right Section (Form) -->
             <div class="col-lg-6">
-                <form method="post" class="contact-form">
+                <form method="post" name="contact_form" id="contact_form" class="contact-form">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <div class="d-flex align-items-center justify-content-between gap-3 mt-1">
                         <a href="http://">Schedule Calendly Call</a>
-                        <button type="submit" class="contact-form__button">Send</button>
+                        <button type="submit" class="contact-form__button" id="contact-submit-btn">
+                            <span class="spinner-border spinner-border-sm me-2 d-none" id="contact-form-spinner" role="status" aria-hidden="true"></span>
+                            Send</button>
                 </form>
             </div>
         </div>
 </div>
 </section>
 </div>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/common/home.js' %}"></script>
 {% endblock %}
