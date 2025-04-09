@@ -128,13 +128,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom User Model
 AUTH_USER_MODEL = 'api.User'
 
-# Email settings (if needed - adjust as necessary)
+# Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # Or your email provider's SMTP server
-EMAIL_PORT = 587 # or 465
-EMAIL_USE_TLS = True # or EMAIL_USE_SSL
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('ROHAN_EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('ROHAN_EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 # Crispy Forms configuration

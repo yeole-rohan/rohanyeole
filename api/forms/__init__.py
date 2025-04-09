@@ -4,3 +4,4 @@ from .sha_256_hash import SHA256HashForm
 from .md5_hash import MD5HashForm
 from .wordpress_password import WordPressPasswordForm
 from .bitwise_calculator import BitwiseCalculatorForm
+from .contact import ContactForm

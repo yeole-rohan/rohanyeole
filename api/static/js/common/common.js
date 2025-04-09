@@ -20,4 +20,17 @@ $(document).ready(function () {
     }
     // Make the function globally accessible
     window.showCustomPopup = showCustomPopup;
+
+    const alerts = document.querySelectorAll('.alert');
+
+    alerts.forEach(alert => {
+      // Keep the alert for 4 seconds, then fade it out
+      setTimeout(() => {
+        alert.classList.remove('show');
+        alert.classList.add('fade');
+        setTimeout(() => {
+          alert.remove();
+        }, 500); // Wait for fade transition to finish
+      }, 4000); // Display for 4 seconds
+    });
 });

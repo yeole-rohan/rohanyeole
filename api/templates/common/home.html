@@ -12,16 +12,17 @@
 
 <section id="rohan-headline" class="text-center">
     <h1>Hi,
-        <span  data-bs-toggle="tooltip" data-bs-placement="top" title="Spent 6+ yrs in IT industry.">I'm Rohan</span>
+        <span data-bs-toggle="tooltip" data-bs-placement="top" title="Spent 6+ yrs in IT industry.">I'm Rohan</span>
         Who love to build tools,
         <br> Based in Maharashtra,
         <span>
             <img data-bs-toggle="tooltip" data-bs-placement="bottom" title="India that is Bharat!" class="img-fluid"
-            src="{% static 'img/home/bharat.svg'%}">
+                src="{% static 'img/home/bharat.svg'%}">
         </span>
     </h1>
     <div class="rohan-headline__btns d-inline-flex">
-        <a href="http://" class="rohan-headline__btns__hire_me" data-bs-toggle="tooltip" data-bs-placement="bottom" title="You are making right choice!">Hire Me</a>
+        <a href="http://" class="rohan-headline__btns__hire_me" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            title="You are making right choice!">Hire Me</a>
     </div>
 </section>
 <div class="container">
@@ -29,36 +30,64 @@
     <section id="rohan-skills">
         <div class="rohan-skills__head">
             <h2>Skills</h2>
-            <p>Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy font.</p>
+            <p>Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy font. Lorem Ipsum is the best dummy
+                font.</p>
         </div>
         <div class="rohan-skills__list">
             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
-               <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
-               <span>Python</span>
+                <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
+                <span>Python</span>
             </a>
             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                 <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
                 <span>CSS</span>
-             </a>
-             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+            </a>
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                 <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
                 <span>HTML</span>
-             </a>
-             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+            </a>
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                 <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
                 <span>JavaScript</span>
-             </a>
-             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+            </a>
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                 <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
                 <span>Django</span>
-             </a>
-             <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
+            </a>
+            <a title="Blogs on " data-bs-toggle="tooltip" data-bs-placement="bottom" title="">
                 <img class="img-fluid me-2" src="{% static 'img/home/python.svg' %}" alt="Python Language">
                 <span>GraphQL</span>
-             </a>
+            </a>
         </div>
     </section>
     <section id="rohan-experience"></section>
-    
+    <section id="rohan-contact" class="section_bg">
+        <div class="row g-5">
+            <!-- Left Section -->
+            <div class="col-lg-6">
+                <h2 class="contact-section__heading">Let's make something incredible together!</h2>
+                <p class="contact-section__description">
+                    You have come across the right choice! Our plan is the best monthly solution to all your product
+                    needs.
+                </p>
+                <div class="contact-section__support">
+                    <img src="{% static 'img/home/email.png' %}" class="img-fluid me-1">
+                    <a href="mailto:contact@rohanyeole.com">contact@rohanyeole.com</a>
+                </div>
+            </div>
+
+            <!-- Right Section (Form) -->
+            <div class="col-lg-6">
+                <form method="post" class="contact-form">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="d-flex align-items-center justify-content-between gap-3 mt-1">
+                        <a href="http://">Schedule Calendly Call</a>
+                        <button type="submit" class="contact-form__button">Send</button>
+                </form>
+            </div>
+        </div>
+</div>
+</section>
 </div>
 {% endblock %}

@@ -43,9 +43,11 @@
    gap: 25px;
    flex-wrap: wrap;
 }
-#rohan-skills{
+
+#rohan-skills {
    margin: 125px 0;
 }
+
 .rohan-skills__list a {
    border-radius: 12px;
    padding: 15px 25px;
@@ -60,15 +62,86 @@
    max-width: 630px;
 }
 
+.rohan-contact-bg {
+   background-color: #38D191;
+}
+
+#rohan-contact {
+   padding: 62px 60px;
+   border-radius: 62px;
+   margin-bottom: 35px;
+   display: inline-block;
+}
+
+.contact-section__heading {
+   font-size: 40px;
+   line-height: 48px;
+   font-weight: bold;
+}
+
+.contact-section__description {
+   font-size: 18px;
+   margin-bottom: 30px;
+   margin-top: 24px;
+   line-height: 26px;
+}
+
+.contact-section__support {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.contact-section__icon {
+   width: 24px;
+   height: 24px;
+   background: #0d6efd;
+   border-radius: 50%;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+   margin-bottom: 20px;
+   width: 100%;
+   padding: 15px 20px;
+   font-size: 16px;
+   line-height: 24px;
+   color: #000;
+   border-radius: 12px;
+   border: 1px solid #9eaaa2;
+   resize: none;
+}
+
+.contact-form__button {
+   background-color: #000;
+   color: white;
+   font-weight: bold;
+   border: none;
+   padding: 10px 20px;
+   border-radius: 66px;
+}
+
+.contact-form a,
+.contact-section__support a {
+   color: #000;
+   text-decoration: none;
+   font-weight: bold;
+}
+
 /* Mobile Modifier */
 @media (max-width: 1024px) {
-   .container, .container-md, .container-sm{
+
+   .container,
+   .container-md,
+   .container-sm {
       max-width: 100%;
    }
+
    .header {
-      padding:10px 13.5px;
+      padding: 10px 13.5px;
    }
 }
+
 @media (max-width: 767px) {
    #rohan-headline {
       padding: 55px 0;
@@ -82,23 +155,29 @@
    #rohan-headline .rohan-headline__btns {
       margin-top: 20px;
    }
-   .rohan-skills__list a{
+
+   .rohan-skills__list a {
       font-size: 18px;
       line-height: 26px;
    }
-   .rohan-skills__list a img{
+
+   .rohan-skills__list a img {
       height: 30px;
    }
-   .rohan-skills__list{
+
+   .rohan-skills__list {
       gap: 10px;
    }
-   #rohan-skills{
+
+   #rohan-skills {
       margin: 60px 0;
    }
-   .rohan-skills__head{
+
+   .rohan-skills__head {
       flex-direction: column;
       margin-bottom: 18px;
    }
+
    #rohan-headline .rohan-headline__btns a {
       padding: 10px 20px;
       font-size: 15px;

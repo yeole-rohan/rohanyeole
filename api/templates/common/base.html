@@ -16,7 +16,8 @@
     <meta name="author" content="Rohan Yeole">
     <!-- Set below on dynamic for each url on website on SEO time -->
     <meta property="og:title" content="Email Validator - Check If an Email is Valid">
-    <meta property="og:description" content="Use our free email validator to check if an email address is valid and formatted correctly.">
+    <meta property="og:description"
+        content="Use our free email validator to check if an email address is valid and formatted correctly.">
     <meta property="og:image" content="https://example.com/images/email-validator.png">
     <meta property="og:url" content="https://example.com/email-validator">
     <meta property="og:type" content="website">
@@ -30,45 +31,55 @@
 </head>
 
 <body>
-{% spaceless %}
+    {% spaceless %}
     <!-- Header Section -->
-<header class="header_bg">
-    <div class="container header header_bg">
+    <header class="section_bg">
+        <div class="container header section_bg">
 
-        <!-- Left Section: Logo and Name -->
-         <a href="{% url 'home' %}">
-            <h1 class="d-flex">
-                <img data-bs-toggle="tooltip" data-bs-placement="bottom"
-                title="Rohan Yeole Logo" src="{% static 'img/home/logo.svg' %}" class="img-fluid me-1" >
-                <span>Rohan Yeole</span>
-            </h1>
-        </a>
-        <!-- Middle Section: Links -->
-        <nav class="header__middle">
-          <a href="/tools" class="header__link">Tools</a>
-          <a href="/products" class="header__link">Products</a>
-          <a href="/blogs" class="header__link">Blogs</a>
-          <a href="{% url 'sport_home' %}" class="header__link">Sports</a>
-        </nav>
-    </div>
-  </header>
-{% endspaceless %}
+            <!-- Left Section: Logo and Name -->
+            <a href="{% url 'home' %}">
+                <h1 class="d-flex">
+                    <img data-bs-toggle="tooltip" data-bs-placement="bottom" title="Rohan Yeole Logo"
+                        src="{% static 'img/home/logo.svg' %}" class="img-fluid me-1">
+                    <span>Rohan Yeole</span>
+                </h1>
+            </a>
+            <!-- Middle Section: Links -->
+            <nav class="header__middle">
+                <a href="/tools" class="header__link">Tools</a>
+                <a href="/products" class="header__link">Products</a>
+                <a href="/blogs" class="header__link">Blogs</a>
+                <a href="{% url 'sport_home' %}" class="header__link">Sports</a>
+            </nav>
+        </div>
+    </header>
+    {% endspaceless %}
     <main class="main-section">
         {% spaceless %}
         {% block content %}{% endblock %}
         {% endspaceless %}
     </main>
-
+    
     {% include './footer.html' %}
-
+    <div class="toast-container" id="message-toasts">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="{% static 'js/common/common.js' %}"></script>
-
-    {% block scripts %}{% endblock %}
+        <script type="text/javascript" src="{% static 'js/common/common.js' %}"></script>
+        
+        {% block scripts %}{% endblock %}
+        
 </body>
 
 </html>
