@@ -60,7 +60,61 @@
             </a>
         </div>
     </section>
-    <section id="rohan-experience"></section>
+    <section id="education" class="education-section">
+        <div class="education-section__header">
+            <h2>Education</h2>
+        </div>
+        <div class="education-section__row row">
+            <div class="education-section__column col">
+                <div class="education-section__institute d-flex">
+                    <div class="education-section__institute-logo">
+                        <img 
+                            class="img-fluid me-2"
+                            src="{% static 'img/home/ssgmce-logo.png' %}" 
+                            alt="SSGMCE"
+                            title="Shri Sant Gajanan Maharaj College of Engineering, Shegaon"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                        />
+                    </div>
+                    <div class="education-section__institute-name">
+                        Shri Sant Gajanan Maharaj College of Engineering
+                    </div>
+                </div>
+                <div class="education-section__degree-info d-flex justify-content-between">
+                    <p class="education-section__degree-title">Bachelor of Engineering</p>
+                    <p class="education-section__major">Computer Science</p>
+                </div>
+                <div class="education-section__year">2014 - 2018</div>
+            </div>
+            <div class="education-section__column col">
+                <div class="education-section__institute d-flex">
+                    <div class="education-section__institute-logo">
+                        <img 
+                            class="img-fluid me-2"
+                            src="{% static 'img/home/state-board.png' %}" 
+                            alt="Maharashtra State Higher Secondary Board"
+                            title="Maharashtra State Higher Secondary Board"
+                            data-bs-toggle="tooltip"
+                            data-bs-placement="bottom"
+                        />
+                    </div>
+                    <div class="education-section__institute-name">
+                        The Maharashtra State Board of Secondary & Higher Secondary Education
+                    </div>
+                </div>
+                <div class="education-section__degree-info d-flex justify-content-between">
+                    <p class="education-section__degree-title">10<sup>th</sup>, 12<sup>th</sup></p>
+                    <p class="education-section__major">Science</p>
+                </div>
+                <div class="education-section__year">2012 - 2014</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="rohan-education">
+        
+    </section>
     <section id="rohan-contact" class="section_bg">
         <div class="row g-5">
             <!-- Left Section -->
@@ -89,8 +143,7 @@
                 </form>
             </div>
         </div>
-</div>
-</section>
+    </section>
 </div>
 {% endblock %}
 {% block scripts %}
