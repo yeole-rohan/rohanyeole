@@ -15,8 +15,8 @@
       "applicationCategory": "Developer Tools",
       "operatingSystem": "Web",
       "featureList": "Real-time execution, error highlighting, debugging",
-      "url": "https://rohanyeole.com//guid/",
-      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "url": "{% url 'generate_guid' %}",
+      "screenshot": "https://rohanyeole.com{% static 'img/schema_img/guid.png' %}",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -211,20 +211,13 @@
         </div>
     </div>
     <div class="tool-container">
-        <header>
-            <h1>Online UUID Generator: Create Unique Identifiers</h1>
-          </header>
+        <h1>Online UUID Generator: Create Unique Identifiers</h1>
         
-          <section>
             <p><strong>Online UUID generator</strong> is your go-to tool to quickly create <strong>UUID v4</strong> strings, suitable for use in software development, databases, and APIs.</p>
-          </section>
         
-          <section>
             <h2>What is a UUID?</h2>
             <p>UUID stands for <strong>Universally Unique Identifier</strong>. It’s a 128-bit number used to uniquely identify information in computer systems. The most common variant is <strong>UUID v4</strong>, which is randomly generated and extremely unlikely to collide.</p>
-          </section>
         
-          <section>
             <h2>Why Use an Online UUID Generator?</h2>
             <ul>
               <li><strong>Convenience:</strong> No need to install any tools or libraries.</li>
@@ -232,9 +225,7 @@
               <li><strong>Free and secure:</strong> 100% free with no usage tracking or limits.</li>
               <li><strong>Instant generation:</strong> Copy and paste with one click.</li>
             </ul>
-          </section>
         
-          <section>
             <h2>Generate UUIDs in Different Languages</h2>
         
             <h3>1. JavaScript (UUID NPM)</h3>
@@ -277,9 +268,7 @@ public class UUIDExample {
             <pre>
 <code>Guid guid = Guid.NewGuid();
 Console.WriteLine(guid);</code></pre>
-          </section>
         
-          <section>
             <h2>Features of Our UUID Generator</h2>
             <ul>
               <li>Generates <strong>UUID v4</strong> (random-based)</li>
@@ -288,9 +277,7 @@ Console.WriteLine(guid);</code></pre>
               <li>Lightweight and fast performance</li>
               <li>Zero tracking or data collection</li>
             </ul>
-          </section>
         
-          <section>
             <h2>When to Use a UUID</h2>
             <p>UUIDs are perfect for:</p>
             <ul>
@@ -299,9 +286,7 @@ Console.WriteLine(guid);</code></pre>
               <li>API keys and identifiers</li>
               <li>Distributed systems</li>
             </ul>
-          </section>
         
-          <section>
             <h2>Popular Use Cases and Variants</h2>
             <ul>
               <li><strong>uuid v4 generator</strong>: Standard for random UUIDs</li>
@@ -310,14 +295,10 @@ Console.WriteLine(guid);</code></pre>
               <li><strong>uuid in Python</strong>: Built-in support via <code>uuid</code> module</li>
               <li><strong>uuid online generator</strong>: Great for testing, prototyping, or quick access</li>
             </ul>
-          </section>
         
-          <section>
             <h2>Try It Yourself</h2>
             <p>Use our <strong><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online UUID Generator" href="{% url 'generate_guid' %}">Online UUID Generator</a></strong> now to create your next globally unique ID in just one click!</p>
-          </section>
         
-          <section>
             <h2>Related Tools</h2>
             <ul>
               <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online MD5 Hash Generator" href="{% url 'md5_hash_generator' %}">Online MD5 Hash Generator</a></li>
@@ -325,7 +306,6 @@ Console.WriteLine(guid);</code></pre>
               <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online SHA 512 Generator" href="{% url 'sha512_generator' %}">Online SHA 512 Generator</a></li>
               <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online Slug Generator" href="{% url 'slug' %}">Online Slug Generator</a></li>
             </ul>
-          </section>
     </div>
     <!-- FAQ Section -->
     <div class="card p-4 mt-2">

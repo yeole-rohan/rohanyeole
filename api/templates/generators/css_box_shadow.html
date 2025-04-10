@@ -5,6 +5,8 @@
 
 {% load static %}
 {% block head %}
+<link rel="stylesheet" href="{% static 'css/common/tool_common.css' %}">
+
     <link rel="stylesheet" href="{% static 'css/generators/css_box_shadow.css' %}">
 {% endblock %}
 {% block content %}
@@ -65,71 +67,80 @@
             </div>
         </div>
     </div>
-    <div class="mt-5">
-        <h2 class="mb-4 text-center">Box Shadow FAQ</h2>
-        
-        <div class="mb-4">
-            <h4>What is a box shadow?</h4>
-            <p>A box shadow is a CSS effect that adds a shadow to an element, creating a depth effect. It is commonly used for styling UI components.</p>
-        </div>
     
-        <div class="mb-4">
-            <h4>What is an example of a shadow?</h4>
-            <p>A common example of a shadow is the shadow cast by an object under sunlight or a CSS box-shadow like <code>box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);</code>.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>What is drop-shadow an example of?</h4>
-            <p>Drop shadow is an example of a filter effect that adds a shadow to an element but retains transparency, commonly used in images and SVG elements.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>How to customize box shadow?</h4>
-            <p>You can customize a box shadow by adjusting its horizontal offset, vertical offset, blur radius, spread radius, and color.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>How to decorate a shadow box?</h4>
-            <p>A shadow box can be decorated using various materials like LED lights, stickers, or layered paper cutouts to enhance its appearance.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>How to read box shadow?</h4>
-            <p>A box-shadow property consists of multiple values like <code>horizontal-offset vertical-offset blur-radius spread-radius color</code>, for example: <code>box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);</code>.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>How do you do shadow writing?</h4>
-            <p>Shadow writing can be done using text-shadow in CSS, such as <code>text-shadow: 2px 2px 5px rgba(0,0,0,0.5);</code>.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>How to layer a shadow box?</h4>
-            <p>Layering a shadow box involves stacking elements at different depths to create a 3D effect.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>What is the difference between text shadow and box shadow?</h4>
-            <p>Text-shadow applies shadow effects to text, while box-shadow applies shadows to entire elements.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>What are the types of shadows?</h4>
-            <p>Types of shadows include cast shadow, form shadow, core shadow, and CSS-based box-shadow and text-shadow.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>What is the difference between box shadow and drop shadow?</h4>
-            <p>Box-shadow applies to the entire element, while drop-shadow works on the visible part, including transparency.</p>
-        </div>
-    
-        <div class="mb-4">
-            <h4>What is shadow texting?</h4>
-            <p>Shadow texting refers to adding a shadow effect to text using CSS or a visual design technique.</p>
-        </div>
+  </div>
+  <div class="mt-5 tool-container">
+    <div class="mt-5 tool-container">
+      <h2 class="mb-4 text-center">Box Shadow Generator – Frequently Asked Questions</h2>
+
+        <h4>What is a box shadow?</h4>
+        <p>A box shadow is a CSS property that allows you to add depth and layering to elements by casting a shadow around them. With a <strong>box shadow generator</strong>, you can visually create the perfect shadow style for buttons, cards, and containers without writing any code.</p>
+        <pre><code>box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);</code></pre>
+
+        <h4>What is an example of a shadow?</h4>
+        <p>Here's a simple shadow applied using CSS:</p>
+        <pre><code>box-shadow: 2px 2px 8px rgba(0,0,0,0.2);</code></pre>
+        <p>This gives a soft shadow below and to the right of the element. You can customize this further using a <strong>box shadow CSS generator</strong>.</p>
+
+        <h4>What is drop-shadow an example of?</h4>
+        <p><code>drop-shadow()</code> is a CSS filter function used to add a shadow to images, icons, and SVGs. Unlike box-shadow, it respects transparency.</p>
+        <pre><code>filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.4));</code></pre>
+        <p>Try our <strong>CSS drop shadow generator</strong> to experiment with this style.</p>
+
+        <h4>How to customize box shadow?</h4>
+        <p>Use values for horizontal offset, vertical offset, blur, spread, and color. You can easily tweak these using our interactive <strong>box shadow maker</strong>.</p>
+        <pre><code>box-shadow: 0 4px 6px 2px rgba(0, 0, 0, 0.15);</code></pre>
+
+        <h4>How to decorate a shadow box?</h4>
+        <p>In design terms, a shadow box can be decorated with 3D effects. In CSS, use our <strong>shadow box CSS generator</strong> to style it with glowing or inset shadows for a creative look.</p>
+
+        <h4>How to read box shadow?</h4>
+        <p>The format is: <code>horizontal-offset vertical-offset blur-radius spread-radius color</code>. Here's an example:</p>
+        <pre><code>box-shadow: 5px 5px 15px 0 rgba(0,0,0,0.5);</code></pre>
+        <p>Our <strong>border shadow CSS generator</strong> makes it easy to understand and adjust these values visually.</p>
+
+        <h4>How do you do shadow writing?</h4>
+        <p>Use the <code>text-shadow</code> property in CSS:</p>
+        <pre><code>text-shadow: 2px 2px 5px rgba(0,0,0,0.4);</code></pre>
+        <p>Use our <strong>CSS text shadow generator</strong> to play with different effects on typography.</p>
+
+        <h4>How to layer a shadow box?</h4>
+        <p>Layering involves applying multiple shadows for a more realistic look. For example:</p>
+        <pre><code>box-shadow: 2px 2px 5px rgba(0,0,0,0.2), 4px 4px 10px rgba(0,0,0,0.1);</code></pre>
+        <p>Our <strong>div shadow generator</strong> helps visualize layered effects quickly.</p>
+
+        <h4>What is the difference between text shadow and box shadow?</h4>
+        <p><strong>Text-shadow</strong> affects only text, while <strong>box-shadow</strong> applies to the entire element box. Use <strong>text shadow generator</strong> for headlines and <strong>box shadow generator</strong> for layout containers.</p>
+
+        <h4>What are the types of shadows?</h4>
+        <ul>
+          <li>Outer shadows (standard box-shadow)</li>
+          <li>Inset shadows (inside the element)</li>
+          <li>Drop shadows (filter-based)</li>
+          <li>Text shadows (on fonts)</li>
+        </ul>
+        <p>Explore all these using our <strong>box shadow inset generator</strong> and <strong>CSS inner shadow generator</strong>.</p>
+
+        <h4>What is the difference between box shadow and drop shadow?</h4>
+        <p>Box-shadow applies to the box model, while drop-shadow is a filter and respects transparency (e.g., for PNGs or SVGs). Check out our <strong>drop shadow generator</strong> to see it in action.</p>
+
+        <h4>What is shadow texting?</h4>
+        <p>Shadow texting uses <code>text-shadow</code> in CSS to give fonts a stylish depth or glow. A <strong>font shadow CSS generator</strong> makes styling fast and visual.</p>
+
+        <h4>Can I create box shadow without code?</h4>
+        <p>Absolutely! Our <strong>HTML box shadow generator</strong> lets you design and copy the code instantly. It's perfect for beginners who want to create shadow CSS easily.</p>
+
+        <h4>What tools can help me generate shadows?</h4>
+        <h2>Related Tools</h2>
+          <ul>
+            <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online MD5 Hash Generator" href="{% url 'md5_hash_generator' %}">Online MD5 Hash Generator</a></li>
+            <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online SHA 256 Generator" href="{% url 'sha256_generator' %}">Online SHA 256 Generator</a></li>
+            <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online SHA 512 Generator" href="{% url 'sha512_generator' %}">Online SHA 512 Generator</a></li>
+            <li><a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online Slug Generator" href="{% url 'slug' %}">Online Slug Generator</a></li>
+          </ul>
     </div>
     
-</div>
+  </div>
 {% endblock %}
 
 {% block scripts %}
@@ -142,8 +153,8 @@
       "applicationCategory": "Developer Tools",
       "operatingSystem": "Web",
       "featureList": "Real-time execution, error highlighting, debugging",
-      "url": "https://rohanyeole.com/box-shadow/",
-      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "url": "{% url 'css_box_shadow' %}",
+      "screenshot": "https://rohanyeole.com{% static 'img/schema_img/css-box-shadow.png' %}",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -172,7 +183,7 @@
               "@type": "ListItem",
               "position": 2,
               "name": "Email Validator",
-              "item": "https://rohanyeole.com/box-shadow/"
+              "item": "https://rohanyeole.com/email-validator/"
             },
           ]
         }
