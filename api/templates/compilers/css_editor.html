@@ -1,13 +1,14 @@
 {% extends '../common/base.html' %}
 
 {% block title %}CSS Online Editor: Edit & Preview CSS Code in Real-Time | RohanYeole.com{% endblock %}
-{% block description %}CSS online editor lets you edit and preview CSS code in real-time. Perfect for developers and designers. Start styling now!{% endblock %}
+{% block description %}CSS compiler lets you edit and preview CSS code in real-time. Perfect for developers and designers. Start styling now!{% endblock %}
 
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/material.min.css">
 <link rel="stylesheet" href="{% static 'css/compilers/compilers_aside.css' %}">
+<link rel="stylesheet" href="{% static 'css/common/tool_common.css' %}">
 <link rel="stylesheet" href="{% static 'css/compilers/html_cs_editor.css' %}">
 <script type="application/ld+json">
     {
@@ -18,8 +19,8 @@
       "applicationCategory": "Developer Tools",
       "operatingSystem": "Web",
       "featureList": "Real-time preview, syntax highlighting, live updates",
-      "url": "https://rohanyeole.com/css-online-editor/",
-      "screenshot": "https://rohanyeole.com/screenshot.png",
+      "url": "{% url 'css_editor' %}",
+      "screenshot": "https://rohanyeole.com{% static 'img/schema_img/html-css-js.png' %}",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -32,33 +33,33 @@
         "reviewCount": "8636"
       }
     }
-    </script>
+</script>
     
 {% endblock %}
 
 {% block content %}
 <div class="compiler-wrapper">
     {% include '../compilers/compiler_sidebar.html' %}
-<div class="editor-container mt-2">
-    <div class="editor-output-wrapper">
-        <div class="editor-main">
-            <div class="editor-tabs">
-                <div>
-                    <div class="editor-tab active" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Add HTML Code" data-tab="html">HTML</div>
-                    <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add CSS Code"
-                        data-tab="css">CSS</div>
-                    <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Js Code"
-                        data-tab="js">JavaScript</div>
+    <div class="editor-container mt-2">
+        <div class="editor-output-wrapper">
+            <div class="editor-main">
+                <div class="editor-tabs">
+                    <div>
+                        <div class="editor-tab active" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Add HTML Code" data-tab="html">HTML</div>
+                        <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add CSS Code"
+                            data-tab="css">CSS</div>
+                        <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Js Code"
+                            data-tab="js">JavaScript</div>
+                    </div>
+                    <div class="editor-tabs-right">
+                        <button id="download-button" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Download Code">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="editor-tabs-right">
-                    <button id="download-button" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Download Code">
-                        <i class="fas fa-download"></i>
-                    </button>
-                </div>
-            </div>
-            <div id="html" class="editor-section active">
+                <div id="html" class="editor-section active">
 <textarea id="html-editor">
 <!DOCTYPE html>
 <html lang="en">
@@ -73,34 +74,75 @@
     </body>
 </html>
 </textarea>
-            </div>
-            <div id="css" class="editor-section">
+                </div>
+                <div id="css" class="editor-section">
 <textarea id="css-editor">
 body { background-color: white; } 
 h1 {color: green;}
 p {color: red;}
 </textarea>
-            </div>
-            <div id="js" class="editor-section">
+                </div>
+                <div id="js" class="editor-section">
 <textarea id="js-editor">
 console.log("Hello from JavaScript!");
 </textarea>
+                </div>
+            </div>
+            <div class="resize-handle" data-bs-toggle="tooltip" data-bs-placement="left"
+            title="Move to Resize">
+                <i class="fas fa-grip-lines-vertical"></i>
+            </div>
+            <div class="output-section">
+                <div class="output-title-bar" id="output-title-bar">
+                    <i id="output-icon" class="fas fa-globe"></i>
+                    <span id="output-title">Untitled</span>
+                </div>
+                <iframe id="output-frame" width="100%" height="100%"></iframe>
             </div>
         </div>
-        <div class="resize-handle" data-bs-toggle="tooltip" data-bs-placement="left"
-        title="Move to Resize">
-            <i class="fas fa-grip-lines-vertical"></i>
-        </div>
-        <div class="output-section">
-            <div class="output-title-bar" id="output-title-bar">
-                <i id="output-icon" class="fas fa-globe"></i>
-                <span id="output-title">Untitled</span>
-            </div>
-            <iframe id="output-frame" width="100%" height="100%"></iframe>
-        </div>
+        <div id="console-output"></div>
     </div>
-    <div id="console-output"></div>
 </div>
+<div class="tool-container">
+    <h1>Online CSS Editor Free – Real-Time Styling with Ease</h1>
+
+  <p>
+    A <strong>CSS editor online free</strong> gives developers and designers the ability to write and apply styles instantly in the browser. With our <a href="/tools/css-editor" title="Online CSS Editor">online CSS and HTML editor</a>, you can build and preview styled HTML pages without installing any software.
+  </p>
+
+  <h2>Features of Our Real-Time CSS Editor</h2>
+
+  <ul>
+    <li><strong>Live Preview:</strong> Instantly see the styled output as you type.</li>
+    <li><strong>Syntax Highlighting:</strong> Easily read and write code with proper formatting.</li>
+    <li><strong>Separate Tabs for HTML, CSS, and JS:</strong> Organized editing experience.</li>
+    <li><strong>Resizable Panels:</strong> Customize your workspace for better productivity.</li>
+    <li><strong>Download Full Project:</strong> Export your complete code to an <code>index.html</code> file.</li>
+  </ul>
+
+  <h2>Example CSS Code</h2>
+
+  <pre><code>body {
+  background-color: #f4f4f4;
+  color: #333;
+}</code></pre>
+
+  <h2>Benefits of Online CSS Editing</h2>
+
+  <p>
+    Whether you're testing designs or learning CSS, a <strong>real-time CSS editor</strong> improves your workflow. No need to refresh or open dev tools — just type and see the result.
+  </p>
+
+  <h2>Learn and Practice CSS Effortlessly</h2>
+
+  <p>
+    Beginners and advanced users alike will appreciate our <a data-bs-toggle="tooltip" data-bs-placement="bottom" href="{% url 'html_editor' %}" title="HTML CSS Compiler Online">html css compiler online</a>. It saves time and encourages experimentation.
+  </p>
+
+  <p>
+    For official documentation on CSS, visit 
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">MDN Web Docs</a>.
+  </p>
 </div>
 {% endblock %}
 

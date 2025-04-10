@@ -5,6 +5,7 @@ aside {
 
 .compiler-wrapper {
     display: flex;
+    background-color: #ecf0f1;
 }
 
 aside h2 {
@@ -53,11 +54,6 @@ aside ul li a:hover {
 
 aside ul li a i {
     margin-right: 10px;
-}
-
-/* Main content styling */
-main {
-    background-color: #ecf0f1;
 }
 
 /* Responsive design */

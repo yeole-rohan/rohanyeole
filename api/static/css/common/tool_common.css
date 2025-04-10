@@ -1,0 +1,45 @@
+.tool-container h1{
+   font-size: 42px;
+  line-height: 50px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.tool-container h2, .tool-container h3{
+   font-size: 24px;
+   line-height: 65px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.tool-container pre {
+   background-color: #f4f4f4;
+   padding: 1rem;
+   border-left: 4px solid #c0392b;
+   overflow-x: auto;
+}
+
+.tool-container code {
+   font-family: Consolas, monospace;
+}
+
+.tool-container a {
+   color: #2980b9;
+   text-decoration: none;
+}
+
+.tool-container p {
+   font-size: 20px;
+   line-height: 40px;
+   margin-bottom: 2rem;
+}
+
+.tool-container a:hover {
+   text-decoration: underline;
+}
+
+.tool-container {
+   max-width: 680px;
+   margin: auto;
+}
+.tool-container ul li{
+   line-height: 40px;
+}

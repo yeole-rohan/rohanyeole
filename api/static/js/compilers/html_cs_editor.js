@@ -25,8 +25,19 @@ $(document).ready(function () {
         matchBrackets: true
 
     });
-
-
+    var defaultHTML = `<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My HTML Page</title>
+    </head>
+    <body>
+        <h1>Code, Edit, Run code online.</h1>
+        <p>Try changing the text and click on the run button to see the output.</p>
+    </body>
+</html>`
+    htmlEditor.setValue(defaultHTML);
     // Tab switching logic
     const tabs = document.querySelectorAll('.editor-tab');
     const sections = document.querySelectorAll('.editor-section');
@@ -84,7 +95,7 @@ $(document).ready(function () {
 
         // Intercept console.log in the iframe
         const iframeConsole = outputFrame.contentWindow.console;
-        const originalConsoleLog = iframeConsole.log;
+        // const originalConsoleLog = iframeConsole.log;
 
         iframeConsole.log = function (...args) {
             // Capture console output

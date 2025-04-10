@@ -1,13 +1,15 @@
 {% extends '../common/base.html' %}
 
-{% block title %}HTML Online Compiler: Edit & Run HTML Code in Real-Time | RohanYeole.com{% endblock %}
-{% block description %} HTML online compiler lets you edit and run HTML code in real-time. Perfect for developers and beginners. Start coding now!{% endblock %}
+{% block title %}HTML Editor Online Free - Live Preview & Download | RohanYeole.com{% endblock %}
+{% block description %} HTML online compiler lets you edit and run HTML code in real-time. Perfect for developers and
+beginners. Start coding now!{% endblock %}
 
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/codemirror.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.1/theme/material.min.css">
 <link rel="stylesheet" href="{% static 'css/compilers/compilers_aside.css' %}">
+<link rel="stylesheet" href="{% static 'css/common/tool_common.css' %}">
 <link rel="stylesheet" href="{% static 'css/compilers/html_cs_editor.css' %}">
 <script type="application/ld+json">
         {
@@ -18,8 +20,8 @@
           "applicationCategory": "Developer Tools",
           "operatingSystem": "Web",
           "featureList": "Live preview, syntax highlighting, real-time updates",
-          "url": "https://rohanyeole.com/html-online-compiler/",
-          "screenshot": "https://rohanyeole.com/screenshot.png",
+          "url": "{% url 'html_editor' %}",
+          "screenshot": "https://rohanyeole.com{% static 'img/schema_img/html-css-js.png' %}",
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -33,74 +35,149 @@
           }
         }        
 </script>
-    
+
 {% endblock %}
 
 {% block content %}
 <div class="compiler-wrapper">
     {% include '../compilers/compiler_sidebar.html' %}
-<div class="editor-container mt-2">
-    <div class="editor-output-wrapper">
-        <div class="editor-main">
-            <div class="editor-tabs">
-                <div>
-                    <div class="editor-tab active" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Add HTML Code" data-tab="html">HTML</div>
-                    <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add CSS Code"
-                        data-tab="css">CSS</div>
-                    <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Js Code"
-                        data-tab="js">JavaScript</div>
+    <div class="editor-container mt-2">
+        <div class="editor-output-wrapper">
+            <div class="editor-main">
+                <div class="editor-tabs">
+                    <div>
+                        <div class="editor-tab active" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Add HTML Code" data-tab="html">HTML</div>
+                        <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add CSS Code"
+                            data-tab="css">CSS</div>
+                        <div class="editor-tab" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add Js Code"
+                            data-tab="js">JavaScript</div>
+                    </div>
+                    <div class="editor-tabs-right">
+                        <button id="download-button" data-bs-toggle="tooltip" data-bs-placement="bottom"
+                            title="Download Code">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
                 </div>
-                <div class="editor-tabs-right">
-                    <button id="download-button" data-bs-toggle="tooltip" data-bs-placement="bottom"
-                        title="Download Code">
-                        <i class="fas fa-download"></i>
-                    </button>
+                <div id="html" class="editor-section active">
+                    <textarea id="html-editor"></textarea>
                 </div>
-            </div>
-            <div id="html" class="editor-section active">
-<textarea id="html-editor">
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My HTML Page</title>
-    </head>
-    <body>
-        <h1>Code, Edit, Run code online.</h1>
-        <p>Try changing the text and click on the run button to see the output.</p>
-    </body>
-</html>
-</textarea>
-            </div>
-            <div id="css" class="editor-section">
+                <div id="css" class="editor-section">
 <textarea id="css-editor">
 body { background-color: white; } 
 h1 {color: green;}
 p {color: red;}
 </textarea>
-            </div>
-            <div id="js" class="editor-section">
+                </div>
+                <div id="js" class="editor-section">
 <textarea id="js-editor">
 console.log("Hello from JavaScript!");
 </textarea>
+                </div>
+            </div>
+            <div class="resize-handle" data-bs-toggle="tooltip" data-bs-placement="left" title="Move to Resize">
+                <i class="fas fa-grip-lines-vertical"></i>
+            </div>
+            <div class="output-section">
+                <div class="output-title-bar" id="output-title-bar">
+                    <i id="output-icon" class="fas fa-globe"></i>
+                    <span id="output-title">Untitled</span>
+                </div>
+                <iframe id="output-frame" width="100%" height="100%"></iframe>
             </div>
         </div>
-        <div class="resize-handle" data-bs-toggle="tooltip" data-bs-placement="left"
-        title="Move to Resize">
-            <i class="fas fa-grip-lines-vertical"></i>
-        </div>
-        <div class="output-section">
-            <div class="output-title-bar" id="output-title-bar">
-                <i id="output-icon" class="fas fa-globe"></i>
-                <span id="output-title">Untitled</span>
-            </div>
-            <iframe id="output-frame" width="100%" height="100%"></iframe>
-        </div>
+        <div id="console-output"></div>
     </div>
-    <div id="console-output"></div>
 </div>
+<div class="tool-container">
+
+    <h1>HTML Editor Online Free — Build, Preview & Download Instantly</h1>
+
+
+    <p>
+        Looking for an <strong>HTML editor online free</strong> that lets you write, preview, and run code in real time?
+        Whether you're learning HTML or working on a front-end project, our tool gives you everything you need in one
+        place — code, test, and download without installing anything.
+    </p>
+
+
+    <h2>What Is an Online HTML Editor?</h2>
+    <p>
+        An <strong>online HTML editor</strong> is a browser-based development environment that allows you to create web
+        pages using HTML, CSS, and JavaScript. These editors provide live previews, syntax highlighting, and support for
+        external styles and scripts — making them a popular choice for students, developers, and designers.
+    </p>
+
+
+    <h2>Key Features of Our Online HTML and CSS Editor</h2>
+
+    <h3>1. Syntax Highlighting</h3>
+    <p>Code is color-coded and easy to read. It helps you identify errors quickly and improves clarity, especially when
+        working with multiple languages in the same project.</p>
+
+    <h3>2. Add CSS (Stylesheet Support)</h3>
+    <p>You can write CSS directly in the <strong>CSS tab</strong>, and it will instantly apply to your HTML.</p>
+    <pre><code>body {
+      background-color: #f4f4f4;
+      font-family: Arial, sans-serif;
+    }
+    
+    h1 {
+      color: #336699;
+      text-align: center;
+    }</code></pre>
+
+    <h3>3. Add JavaScript (Script Tab)</h3>
+    <p>You can also write and run JavaScript in the <strong>JS tab</strong> — perfect for adding interactivity or
+        testing scripts.</p>
+    <pre><code>document.addEventListener("DOMContentLoaded", function () {
+      document.getElementById("clickMe").addEventListener("click", function () {
+        alert("Button clicked!");
+      });
+    });</code></pre>
+
+    <p>And in your HTML:</p>
+    <pre><code>&lt;button id="clickMe"&gt;Click Me&lt;/button&gt;</code></pre>
+
+    <h3>4. Real-Time Preview</h3>
+    <p>No need to press a "Run" button — the editor reloads and reflects changes instantly as you type.</p>
+
+    <h3>5. Resizable Editor Windows</h3>
+    <p>Resize the HTML, CSS, JS, and Preview panes to fit your screen or workflow.</p>
+
+    <h3>6. JavaScript Console Output</h3>
+    <p>See your console messages or errors right inside the editor — just like using browser dev tools.</p>
+
+    <h3>7. Download Your Project as index.html</h3>
+    <p>Click a button to <strong>download your code as an index.html file</strong>, ready for deployment or reuse.</p>
+
+
+    <h2>Who Should Use This HTML CSS Online Compiler?</h2>
+    <p>
+        Ideal for anyone looking for tools like:
+    <ul>
+        <li>HTML CSS JavaScript Online Compiler</li>
+        <li>Online HTML and CSS Editor</li>
+        <li>HTML Code Running Online</li>
+        <li>HTML Online Run Tool</li>
+        <li>CSS and HTML Editor Online</li>
+    </ul>
+    </p>
+    <p>It’s perfect for students, developers, designers, educators, and creators.</p>
+      
+      <p>
+        You can also explore our <a href="{% url 'css_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online CSS Editor">CSS and HTML editor online</a> to practice styling and see the effects instantly.
+      </p>
+      <p>
+        You can also explore our <a href="{% url 'js_editor' %}" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Online JS Editor">JavaScript editor online</a> to practice js and see the effects instantly.
+      </p>
+      
+      <p>
+        Users can add CSS in the style panel and JavaScript in a dedicated tab, all of which is rendered instantly. Curious how HTML works? Check 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">MDN Docs</a>.
+      </p>
+      
 </div>
 {% endblock %}
 
